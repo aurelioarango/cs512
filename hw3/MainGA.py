@@ -9,6 +9,7 @@ import sys
 import GA
 import FromDataFileGA
 import FromFitnessFileGA
+import Sort
 
 
 # ------------------------------------------------------------------------------
@@ -38,65 +39,19 @@ def Create_A_Population(numOfPop, numOfFea):
             population[i][j] = V[j]
     return population
 
-
-# ------------------------------------------------------------------------------
 def sort_population(population, fitness, numOfPop):
     """sort matrix by fitness: We will use a quick sort"""
     """This quick sort will sort the fitness array from lowest to highest.
         Additionally, at the same time it will sort its corresponding population """
-    #print numOfPop
-    quick_sort_population(population, fitness, 0, numOfPop)
-
-
-def quick_sort_population(population, fitness, iLow, iHigh):
-    pivotpoint = 0
-    """print str(len(fitness)) +" quick"
-    if len(fitness) == 2:
-        #swap values
-        if fitness[0] > fitness[1]:
-            temp = fitness[1]
-            fitness[1] = fitness[0]
-            fitness[0]=temp
-    elif len(fitness) > 2:"""
-        #print len(fitness)
-    if iHigh > iLow :
-        pivotpoint = sort_partition(population, fitness, iLow, iHigh)
-        quick_sort_population(population, fitness, iLow, pivotpoint)
-        quick_sort_population(population, fitness, pivotpoint + 1, iHigh)
-
-
-def sort_partition(population, fitness, iLow, iHigh):
-    """Partition of quick sort """
-    # i=iLow+1
-    j = iLow
-    temp = 0
-    pivot_item = fitness[iLow]
-
-    for i in range(iLow + 1, iHigh):
-        if (fitness[i] < pivot_item):
-            j = j + 1
-            temp = fitness[i]
-            fitness[i] = fitness[j]
-            fitness[j] = temp
-            temp_pop = population[i]
-            population[i] = population[j]
-            population[j] = temp_pop
-    pivot_point = j
-    temp = fitness[iLow]
-    fitness[iLow] = fitness[pivot_point]
-    fitness[pivot_point] = temp
-    temp_pop = population[iLow]
-    population[iLow] = population[pivot_point]
-    population[pivot_point] = temp_pop
-
-    return pivot_point
+    # print numOfPop
+    Sort.quick_sort_population(population, fitness, 0, numOfPop)
 
 
 # ------------------------------------------------------------------------------
 def split_parents(mom, dad, numOfFeatures):
     """Split the parents by the number of split points given by the user"""
     """Check that the new child has at lest 3 features """
-    child_one_sum = 0
+    child_one_sum = 0  # Initialize variables to 0
     child_two_sum = 0
 
     while (child_one_sum < 3) and (child_two_sum < 3):
@@ -107,7 +62,7 @@ def split_parents(mom, dad, numOfFeatures):
         child_two = concatenate((dad[0:splitpoint], mom[splitpoint:]))
         child_one_sum = child_one.sum()
         child_two_sum = child_two.sum()
-
+    """Return the two children"""
     return child_one, child_two
 
 # ------------------------------------------------------------------------------
@@ -116,7 +71,7 @@ def Create_GA_Population(numOfPop, numOfFea, previousPop, ga_pop, fitness):
     """Sort population by fitness using a quick sort """
     print str(len(fitness)) + " fitness ga"
     sort_population(previousPop, fitness, numOfPop)
-
+    """ Genetic algorithm population size"""
     ga_population = ga_pop
     new_pop = zeros((ga_population, numOfFea))
 
