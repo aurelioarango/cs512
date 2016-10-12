@@ -71,32 +71,52 @@ def Create_GA_Population(numOfPop, numOfFea, previousPop, ga_pop, fitness):
     """Sort population by fitness using a quick sort """
     print str(len(fitness)) + " fitness ga"
     sort_population(previousPop, fitness, numOfPop)
+
+
     """ Genetic algorithm population size"""
     ga_population = ga_pop
+
     new_pop = zeros((ga_population, numOfFea))
+    print shape(new_pop)
 
     if ga_population > 2:
-        new_pop = zeros((ga_population, numOfFea))
+        #new_pop = zeros((ga_population, numOfFea))
         j = 0
         """Get the best two parents"""
         new_pop[0] = previousPop[0]
         new_pop[1] = previousPop[1]
+        #print new_pop[0]
+        #print new_pop[1]
 
         """split the best for loop to create children best of 10 add to new population"""
         """from 2 till n, it will """
-        for x in range(2, ga_population, 2):
-            new_pop[x], new_pop[x + 1] = split_parents(previousPop[j], previousPop[j + 1], numOfFea)
-            j = j + 1
+        counter = 2;
+        print ga_population
 
+        for x in range(2, ga_population, 2):
+            new_pop[x], new_pop[x + 1] = split_parents(previousPop[x], previousPop[x + 1], numOfFea)
+
+        #for x in range(2, ga_population,2):
+        #    new_pop[x], new_pop[x + 1] = split_parents(previousPop[j], previousPop[j + 1], numOfFea)
+         #   print str(x) +" x "
+         #   j = j + 1
+         #   counter =counter +2;
+        #print str(counter) + " counter - number of children with parents"
     """Create new random samples calling the function Create_A_Population """
+
     print str(len(fitness)) + " fitness ga before random pop"
+    print str(numOfPop - ga_population)+ " numOfPop - ga_population"
+    print str(shape(new_pop)) + " ga population"
+
     random_population = Create_A_Population(numOfPop - ga_population, numOfFea)
 
+    print str(shape(random_population)) + "random population"
 
     if ga_population >= 2:
         new_pop = concatenate((new_pop, random_population))
+        print str(shape(new_pop)) + " inside if ga"
     else:
-        print str(shape(random_population))+" inside if ga"
+        print str(shape(random_population))+" inside else ga"
         new_pop = random_population
         return new_pop
 
@@ -166,7 +186,7 @@ def main():
         TrainX, TrainY, ValidateX, ValidateY, TestX, TestY)
 
     """Create loop that will generate at most 2000 generations """
-    numberOfGenerations = 10
+    numberOfGenerations = 2
     parentsPopulation = zeros((2, numOfFea))
     parentsFitness = [0]*2
     num_ga_pop = 20
