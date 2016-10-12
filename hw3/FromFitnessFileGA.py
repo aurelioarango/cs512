@@ -145,7 +145,7 @@ def validate_model(model, fileW, population, TrainX, TrainY, ValidateX, Validate
 
     unfit = 1000
     itFits = 1
-    print str(len(fitness)) +" fitness before loop"
+    #print str(len(fitness)) +" fitness before loop"
     for i in range(numOfPop):
 
         """Get columns that have a value of one and eliminate the rest"""
@@ -233,7 +233,7 @@ def validate_model(model, fileW, population, TrainX, TrainY, ValidateX, Validate
     #write(model, fileW, trackDesc, trackFitness, trackModel, trackR2, \
      #     trackQ2, trackR2PredValidation, trackR2PredTest)
 
-
+    print str(len(trackFitness))+" track fitness"
     return itFits, fitness, trackDesc, trackFitness, trackModel, trackR2, trackQ2, trackR2PredValidation, trackR2PredTest
 
 

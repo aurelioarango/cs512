@@ -83,6 +83,7 @@ def Create_GA_Population(numOfPop, numOfFea, previousPop, ga_pop, fitness):
         new_pop[1] = previousPop[1]
 
         """split the best for loop to create children best of 10 add to new population"""
+        """from 2 till n, it will """
         for x in range(2, ga_population, 2):
             new_pop[x], new_pop[x + 1] = split_parents(previousPop[j], previousPop[j + 1], numOfFea)
             j = j + 1
@@ -100,9 +101,6 @@ def Create_GA_Population(numOfPop, numOfFea, previousPop, ga_pop, fitness):
         return new_pop
 
     print str(len(fitness)) + " fitness ga after if"
-
-    """ print str(len(new_pop)) + " new pop" """
-    '''print shape(new_pop)'''
 
     """return the new population set"""
     return new_pop
@@ -171,7 +169,7 @@ def main():
     numberOfGenerations = 10
     parentsPopulation = zeros((2, numOfFea))
     parentsFitness = [0]*2
-    num_ga_pop = 2
+    num_ga_pop = 20
     sort_population(population, fitness, numOfPop)
 
     """keep track of best parents throughout the generations"""
@@ -185,7 +183,7 @@ def main():
 
         #population = Create_A_Population(numOfPop, numOfFea)
         """Create GA population, based on first population"""
-        #returning wrong population
+
         population = Create_GA_Population(numOfPop, numOfFea, population, num_ga_pop, fitness)
         """Validate model"""
         print str(shape(population)) + " pop shape"
@@ -213,12 +211,13 @@ def main():
         """Check every 500 generations for changes in population if no change print to file"""
         """checks to make sure the best fitness and populations changed within 500 iterations"""
         if(fitnessLastUpdated == 500):
+            #print fitnessLastUpdated
             break
 
         fitnessLastUpdated = fitnessLastUpdated + 1
 
     print "----------- before writing to file" + str(len(fitness))
-    """Adding a comment"""
+
     print str(shape(population)) + " before writing to file pop shape"
     FromFitnessFileGA.write(model, fileW, trackDesc, trackFitness, trackModel, trackR2, trackQ2, trackR2PredValidation, trackR2PredTest)
 
