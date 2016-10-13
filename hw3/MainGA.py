@@ -182,7 +182,7 @@ def main():
 
 
     fittingStatus, fitness, trackDesc, trackFitness, trackModel, trackR2, trackQ2, trackR2PredValidation, \
-        trackR2PredTest = FromFitnessFileGA.validate_model(model, fileW, population, \
+trackR2PredTest = FromFitnessFileGA.validate_model(model, fileW, population, \
         TrainX, TrainY, ValidateX, ValidateY, TestX, TestY)
 
     """Create loop that will generate at most 2000 generations """

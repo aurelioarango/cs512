@@ -126,9 +126,9 @@ def OnlySelectTheOnesColumns(popI):
 def validate_model(model, fileW, population, TrainX, TrainY, ValidateX, ValidateY, TestX, TestY):
     numOfPop = population.shape[0]  # get the population based on the number of features selected
     """Create an array based on the population size"""
-
+    #model = GA.GA()
     fitness = zeros(numOfPop)
-    print numOfPop
+
     print str(len(fitness))+" getting fitness from num of pop"
     c = 2
     """ initialize booleans for false=0 and true =1"""
@@ -163,7 +163,7 @@ def validate_model(model, fileW, population, TrainX, TrainY, ValidateX, Validate
         try:
             model_desc = model.fit(X_train_masked, TrainY)
         except:
-            return unfit, fitness
+            return unfit, fitness, None,None,None,None,None,None,None
 
         # Computed predicted values
         Yhat_cv = cv_predict(model, X_train_masked, TrainY)  # Cross Validation
@@ -233,9 +233,10 @@ def validate_model(model, fileW, population, TrainX, TrainY, ValidateX, Validate
     #write(model, fileW, trackDesc, trackFitness, trackModel, trackR2, \
      #     trackQ2, trackR2PredValidation, trackR2PredTest)
 
-    print str(len(trackFitness))+" track fitness"
-    return itFits, fitness, trackDesc, trackFitness, trackModel, trackR2, trackQ2, trackR2PredValidation, trackR2PredTest
 
+    #data = {itFits, fitness, trackDesc, trackFitness, trackModel, trackR2, trackQ2, trackR2PredValidation, trackR2PredTest}
+    #return data
+    return itFits, fitness, trackDesc, trackFitness, trackModel, trackR2, trackQ2, trackR2PredValidation, trackR2PredTest
 
 # ------------------------------------------------------------------------------  
 

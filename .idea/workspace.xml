@@ -2,10 +2,56 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb350838-af1e-415f-9411-f56023bcba6f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hw3/TestGA.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-11-58-00.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-13-04-12.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-13-07-15.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-13-08-59.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-13-09-43.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-13-14-04.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-13-14-47.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-13-15-09.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-13-15-57.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-13-16-53.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-13-32-42.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-13-33-57.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-13-34-25.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-13-35-23.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-13-36-17.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-13-39-10.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-13-39-27.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-13-46-57.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-13-47-25.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-14-11-29.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-14-14-50.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-14-15-26.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-14-16-49.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-14-16-59.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-14-17-17.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-14-17-24.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-14-22-27.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-14-29-48.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-14-30-27.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-14-30-58.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-15-18-04.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-15-20-42.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-15-22-12.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-15-22-59.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-15-23-13.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-15-24-55.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-15-25-03.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-15-29-12.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-15-34-45.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-15-35-04.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-15-35-18.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-15-35-47.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-15-44-53.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-09-29-17-15-26.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hw2/2016-10-04-11-37-45.csv" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw3/FromFitnessFileGA.py" afterPath="$PROJECT_DIR$/hw3/FromFitnessFileGA.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw3/GA.py" afterPath="$PROJECT_DIR$/hw3/GA.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw3/MainGA.py" afterPath="$PROJECT_DIR$/hw3/MainGA.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw3/TestGA.py" afterPath="$PROJECT_DIR$/hw3/TestGA.py" />
     </list>
     <ignored path="cs512.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,8 +74,8 @@
       <file leaf-file-name="MainGA.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw3/MainGA.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="194" column="51" selection-start-line="194" selection-start-column="51" selection-end-line="194" selection-end-column="51" />
+            <state relative-caret-position="2980">
+              <caret line="211" column="59" selection-start-line="211" selection-start-column="59" selection-end-line="211" selection-end-column="59" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -40,8 +86,8 @@
       <file leaf-file-name="TestGA.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw3/TestGA.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+            <state relative-caret-position="288">
+              <caret line="40" column="15" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="15" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -52,11 +98,19 @@
       <file leaf-file-name="GA.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hw3/GA.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1218">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding>
-                <element signature="e#33#78#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="492">
+              <caret line="89" column="74" selection-start-line="89" selection-start-column="74" selection-end-line="89" selection-end-column="74" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mlr.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hw2/mlr.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -64,30 +118,8 @@
       <file leaf-file-name="FromFitnessFileGA.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw3/FromFitnessFileGA.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2652">
-              <caret line="241" column="9" selection-start-line="241" selection-start-column="4" selection-end-line="241" selection-end-column="9" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Sort.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw3/Sort.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="42" column="36" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FromDataFileGA.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw3/FromDataFileGA.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-156">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="186">
+              <caret line="125" column="24" selection-start-line="125" selection-start-column="19" selection-end-line="125" selection-end-column="24" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -111,8 +143,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/hw3/Sort.py" />
-        <option value="$PROJECT_DIR$/hw3/FromFitnessFileGA.py" />
         <option value="$PROJECT_DIR$/hw3/MainGA.py" />
+        <option value="$PROJECT_DIR$/hw3/FromFitnessFileGA.py" />
         <option value="$PROJECT_DIR$/hw3/TestGA.py" />
         <option value="$PROJECT_DIR$/hw3/GA.py" />
       </list>
@@ -179,6 +211,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="hw3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs512" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs512" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hw2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -381,15 +427,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="33" y="35" width="1887" height="1045" extended-state="4" />
-    <editor active="false" />
+    <frame x="33" y="35" width="1887" height="1045" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09453001" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34678704" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33882102" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -424,7 +470,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#33#78#0" expanded="true" />
+            <element signature="e#33#78#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -462,7 +508,7 @@
         <state relative-caret-position="396">
           <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
           <folding>
-            <element signature="e#33#78#0" expanded="true" />
+            <element signature="e#33#78#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -500,7 +546,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#0#45#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -510,7 +556,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#33#78#0" expanded="true" />
+            <element signature="e#33#78#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -548,7 +594,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#0#45#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -557,13 +603,54 @@
     <entry file="file://$PROJECT_DIR$/hw3/2016-10-11-17-49-56.csv" />
     <entry file="file://$PROJECT_DIR$/hw3/2016-10-11-17-52-14.csv" />
     <entry file="file://$PROJECT_DIR$/hw3/2016-10-11-17-52-38.csv" />
-    <entry file="file://$PROJECT_DIR$/hw3/FromDataFileGA.py">
+    <entry file="file://$PROJECT_DIR$/hw3/2016-10-12-21-49-36.csv" />
+    <entry file="file://$PROJECT_DIR$/hw3/2016-10-12-21-50-43.csv" />
+    <entry file="file://$PROJECT_DIR$/hw3/2016-10-12-22-33-27.csv" />
+    <entry file="file://$PROJECT_DIR$/hw3/2016-10-12-22-33-18.csv" />
+    <entry file="file://$PROJECT_DIR$/hw3/2016-10-12-22-32-58.csv" />
+    <entry file="file://$PROJECT_DIR$/hw3/2016-10-12-22-34-06.csv" />
+    <entry file="file://$PROJECT_DIR$/hw3/2016-10-12-22-34-14.csv" />
+    <entry file="file://$PROJECT_DIR$/hw3/2016-10-12-22-36-52.csv" />
+    <entry file="file://$PROJECT_DIR$/hw3/2016-10-12-22-37-01.csv" />
+    <entry file="file://$PROJECT_DIR$/hw3/2016-10-12-22-37-58.csv" />
+    <entry file="file://$PROJECT_DIR$/hw3/2016-10-12-22-38-06.csv" />
+    <entry file="file://$PROJECT_DIR$/hw3/2016-10-13-10-56-45.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-156">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw3/2016-10-13-10-55-10.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw3/2016-10-13-10-58-09.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw3/2016-10-13-11-07-52.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw3/2016-10-13-11-05-29.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -575,7 +662,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw3/2016-10-12-21-49-36.csv">
+    <entry file="file://$PROJECT_DIR$/hw3/FromDataFileGA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#45#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw3/2016-10-13-11-12-18.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -583,7 +680,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw3/2016-10-12-21-50-43.csv">
+    <entry file="file://$PROJECT_DIR$/hw3/2016-10-13-11-12-28.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -591,71 +688,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw3/2016-10-12-22-33-27.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw3/2016-10-12-22-33-18.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw3/2016-10-12-22-32-58.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw3/2016-10-12-22-34-06.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw3/2016-10-12-22-34-14.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw3/2016-10-12-22-36-52.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw3/2016-10-12-22-37-01.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw3/2016-10-12-22-37-58.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw3/2016-10-12-22-38-06.csv">
+    <entry file="file://$PROJECT_DIR$/hw3/2016-10-13-11-14-35.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -665,18 +698,74 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hw3/FromFitnessFileGA.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2652">
-          <caret line="241" column="9" selection-start-line="241" selection-start-column="4" selection-end-line="241" selection-end-column="9" />
+        <state relative-caret-position="186">
+          <caret line="125" column="24" selection-start-line="125" selection-start-column="19" selection-end-line="125" selection-end-column="24" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hw3/2016-10-13-11-15-02.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw2/mlr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw3/2016-10-13-11-22-49.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-120">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw3/2016-10-13-11-27-48.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-120">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw3/2016-10-13-11-28-34.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw3/2016-10-13-11-29-26.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-120">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw3/2016-10-13-11-46-54.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hw3/MainGA.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="194" column="51" selection-start-line="194" selection-start-column="51" selection-end-line="194" selection-end-column="51" />
+        <state relative-caret-position="2980">
+          <caret line="211" column="59" selection-start-line="211" selection-start-column="59" selection-end-line="211" selection-end-column="59" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
@@ -685,21 +774,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hw3/TestGA.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        <state relative-caret-position="288">
+          <caret line="40" column="15" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="15" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hw3/2016-10-13-12-24-39.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hw3/GA.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1218">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#33#78#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="492">
+          <caret line="89" column="74" selection-start-line="89" selection-start-column="74" selection-end-line="89" selection-end-column="74" />
+          <folding />
         </state>
       </provider>
     </entry>

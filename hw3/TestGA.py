@@ -33,7 +33,7 @@ def createAnOutputFile():
     return fileW
 
 
-
+#------------------------------------------------------------------------------------
 model = GA.GA()
 fileW = createAnOutputFile()
 numOfPop = 50
@@ -45,23 +45,31 @@ TrainX, TrainY, ValidateX, ValidateY, TestX, TestY = FromDataFileGA.getAllOfTheD
 """Rescale the data!!! """
 TrainX, ValidateX, TestX = FromDataFileGA.rescaleTheData(TrainX, ValidateX, TestX)
 
-population = GA.Create_A_Population(numOfPop, numOfFea)
+"""Create population, random"""
+population = model.Create_A_Population(numOfPop, numOfFea)
 
-fittingStatus, fitness, trackDesc, trackFitness, trackModel, trackR2, trackQ2, trackR2PredValidation, trackR2PredTest = FromFitnessFileGA.validate_model(model, fileW, population, TrainX, TrainY, ValidateX, ValidateY, TestX, TestY)
+fittingStatus, fitness, trackDesc, trackFitness, trackModel, trackR2, trackQ2, trackR2PredValidation, \
+        trackR2PredTest = FromFitnessFileGA.validate_model(model, fileW, population, TrainX, TrainY, \
+                                                           ValidateX, ValidateY, TestX, TestY)
 
 
-population = GA.Create_GA_Population(numOfPop, numOfFea, population, num_ga_pop, fitness)
+population = model.Create_GA_Population(numOfPop, numOfFea, population, num_ga_pop, fitness)
 
 """Read data from file"""
-TrainX, TrainY, ValidateX, ValidateY, TestX, TestY = FromDataFileGA.getAllOfTheData()
+#TrainX, TrainY, ValidateX, ValidateY, TestX, TestY = FromDataFileGA.getAllOfTheData()
 """Rescale the data!!! """
-TrainX, ValidateX, TestX = FromDataFileGA.rescaleTheData(TrainX, ValidateX, TestX)
+#TrainX, ValidateX, TestX = FromDataFileGA.rescaleTheData(TrainX, ValidateX, TestX)
+
+#data = {itFits, fitness, trackDesc, trackFitness, trackModel, trackR2, trackQ2, trackR2PredValidation, trackR2PredTest}
+fittingStatus, fitness, trackDesc, trackFitness, trackModel, trackR2, trackQ2, trackR2PredValidation, \
+        trackR2PredTest = FromFitnessFileGA.validate_model(model, fileW, population, TrainX, TrainY, \
+                                                           ValidateX, ValidateY, TestX, TestY)
 
 
-fittingStatus, fitness, trackDesc, trackFitness, trackModel, trackR2, trackQ2, trackR2PredValidation, trackR2PredTest = FromFitnessFileGA.validate_model(model, fileW, population, TrainX, TrainY, ValidateX, ValidateY, TestX, TestY)
-
-
+#print data
 FromFitnessFileGA.write(model, fileW, trackDesc, trackFitness, trackModel, trackR2, trackQ2, trackR2PredValidation, trackR2PredTest)
+
+#FromFitnessFileGA.write(model, fileW, data[2], data[3], data[4], data[5], data[6], data[7], data[8])
 
 
 
