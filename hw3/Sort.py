@@ -1,5 +1,5 @@
 """CS512 Quick Sort Algorithm
-   Aurelio Arango
+   Team Members: Aurelio Arango
 
    This algorithm sorts a GA population by its fitness.
  """

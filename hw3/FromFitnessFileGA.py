@@ -129,7 +129,7 @@ def validate_model(model, fileW, population, TrainX, TrainY, ValidateX, Validate
     #model = GA.GA()
     fitness = zeros(numOfPop)
 
-    print str(len(fitness))+" getting fitness from num of pop"
+    #print str(len(fitness))+" getting fitness from num of pop"
     c = 2
     """ initialize booleans for false=0 and true =1"""
     false = 0
@@ -239,7 +239,7 @@ def validate_model(model, fileW, population, TrainX, TrainY, ValidateX, Validate
     return itFits, fitness, trackDesc, trackFitness, trackModel, trackR2, trackQ2, trackR2PredValidation, trackR2PredTest
 
 # ------------------------------------------------------------------------------  
-
+"""Saving files"""
 def write(model, fileW, trackDesc, trackFitness, trackModel, trackR2, \
           trackQ2, trackR2PredValidation, trackR2PredTest):
     print len(trackFitness)
@@ -251,6 +251,23 @@ def write(model, fileW, trackDesc, trackFitness, trackModel, trackR2, \
 
 
         # fileOut.close()
+"""Moved from Main and kept it as a function"""
+def createAnOutputFile():
+    file_name = None
+    algorithm = None
 
+    timestamp = time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime())
+    if ((file_name == None) and (algorithm != None)):
+        file_name = "{}_{}_gen{}_{}.csv".format(alg.__class__.__name__,
+                                                alg.model.__class__.__name__, alg.gen_max, timestamp)
+    elif file_name == None:
+        file_name = "{}.csv".format(timestamp)
+    fileOut = file(file_name, 'wb')
+    fileW = csv.writer(fileOut)
+
+    fileW.writerow(['Descriptor ID', 'Fitness', 'Model', 'R2', 'Q2', \
+                    'R2Pred_Validation', 'R2Pred_Test'])
+
+    return fileW
 # ------------------------------------------------------------------------------
 

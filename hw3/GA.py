@@ -1,4 +1,9 @@
-"""Multiple Linear Regression"""
+"""CS512
+    Aurelio Arango
+    Kristina Nystrom
+    Marshia Hashemi"""
+"""Genetic Algorithm"""
+
 import time  # provides timing for benchmarks
 from numpy import *  # provides complex math and array functions
 from sklearn import svm  # provides Support Vector Regression
@@ -79,9 +84,9 @@ class GA:
         child_one_sum = 0  # Initialize variables to 0
         child_two_sum = 0
         twins=0
-
+        """Due to the limited number of features children could potentially be twins"""
         while (child_one_sum < 3) and (child_two_sum < 3) and twins !=1 :
-            """Reset children"""
+            """Reset children values"""
             child_one_sum = 0
             child_two_sum = 0
             splitpoint = random.randint(0, numOfFeatures)
@@ -91,9 +96,6 @@ class GA:
             child_two = concatenate((dad[0:splitpoint], mom[splitpoint:]))
             child_one_sum = child_one.sum()
             child_two_sum = child_two.sum()
-            if !array_equals(child_one,child_two):
-
-
 
 
         """Return the two children"""
@@ -142,7 +144,7 @@ class GA:
         random_population = self.Create_A_Population(numOfPop - ga_population, numOfFea)
 
         if ga_population >= 2:
-            print "population greater than 2"
+            #print "population greater than 2"
             new_pop = concatenate((new_pop, random_population))
         else:
             new_pop = random_population
