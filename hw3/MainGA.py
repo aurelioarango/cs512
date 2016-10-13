@@ -186,7 +186,7 @@ def main():
         TrainX, TrainY, ValidateX, ValidateY, TestX, TestY)
 
     """Create loop that will generate at most 2000 generations """
-    numberOfGenerations = 2
+    numberOfGenerations = 10
     parentsPopulation = zeros((2, numOfFea))
     parentsFitness = [0]*2
     num_ga_pop = 20
@@ -201,20 +201,20 @@ def main():
 
     for x in range(0, numberOfGenerations):
 
-        #population = Create_A_Population(numOfPop, numOfFea)
+        population = Create_A_Population(numOfPop, numOfFea)
         """Create GA population, based on first population"""
 
         population = Create_GA_Population(numOfPop, numOfFea, population, num_ga_pop, fitness)
         """Validate model"""
-        print str(shape(population)) + " pop shape"
+        #print str(shape(population)) + " pop shape"
 
-        print "-----------before validation loop "+ str(len(fitness))
+        #print "-----------before validation loop "+ str(len(fitness))
         fittingStatus, fitness, trackDesc, trackFitness, trackModel, trackR2, trackQ2, trackR2PredValidation, \
         trackR2PredTest = FromFitnessFileGA.validate_model(model, fileW, population, \
             TrainX, TrainY, ValidateX, ValidateY, TestX, TestY)
 
 
-        print str(shape(population)) + " after validation pop shape"
+        #print str(shape(population)) + " after validation pop shape"
         print "----------- after validation loop"+ str(len(fitness))
         sort_population(population, fitness, numOfPop)
         print "----------- after sort loop" + str(len(fitness))
@@ -235,7 +235,7 @@ def main():
             break
 
         fitnessLastUpdated = fitnessLastUpdated + 1
-
+    print fitness
     print "----------- before writing to file" + str(len(fitness))
 
     print str(shape(population)) + " before writing to file pop shape"
