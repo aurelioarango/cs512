@@ -76,6 +76,46 @@ class GA:
         # print numOfPop
         Sort.quick_sort_population(population, fitness, 0, numOfPop)
 
+    # ------------------------------------------------------------------------------
+    def split_parents_two(self, mom, dad, numOfFeatures):
+        """Split the parents by the number of split points given by the user"""
+        """Check that the new child has at lest 3 features """
+        child_one_sum = 0  # Initialize variables to 0
+        child_two_sum = 0
+        twins = 0  # assume array are the same
+        """Due to the limited number of features children could potentially be twins"""
+        while (child_one_sum < 3) and (child_two_sum < 3) and twins == 0:
+            """Reset children values"""
+            child_one_sum = 0
+            child_two_sum = 0
+
+            splitpoint1 = random.randint(0, numOfFeatures)
+
+            splitpoint2 = random.randint(splitpoint1, numOfFeatures)
+            #print "Split point1 "+str(splitpoint1) +" Split point2 "+str(splitpoint2)
+
+
+            '''found that we did not need to seed the random because we did get
+               different values every time we printed it'''
+            child_one = concatenate((mom[0:splitpoint1], dad[splitpoint1:splitpoint2]))
+            child_one = concatenate((child_one,mom[splitpoint2:]))
+
+            child_two = concatenate((dad[0:splitpoint1], mom[splitpoint1:splitpoint2]))
+            child_two = concatenate((child_two, dad[splitpoint2:]))
+
+            child_one_sum = child_one.sum()
+            child_two_sum = child_two.sum()
+
+            if array_equal(child_one, child_two):
+                #print "they are equal to each other"
+                twins=0
+            else:
+                print "they are not equal to each other"
+                twins = 1
+
+        """Return the two children"""
+        return child_one, child_two
+
 
     # ------------------------------------------------------------------------------
     def split_parents(self,mom, dad, numOfFeatures):
@@ -83,19 +123,23 @@ class GA:
         """Check that the new child has at lest 3 features """
         child_one_sum = 0  # Initialize variables to 0
         child_two_sum = 0
-        twins=0
+        twins=0  # assume array are the same
         """Due to the limited number of features children could potentially be twins"""
-        while (child_one_sum < 3) and (child_two_sum < 3) and twins !=1 :
+        while (child_one_sum < 3) and (child_two_sum < 3) and twins == 0:
             """Reset children values"""
             child_one_sum = 0
             child_two_sum = 0
+
             splitpoint = random.randint(0, numOfFeatures)
+
             '''found that we did not need to seed the random because we did get
                different values every time we printed it'''
             child_one = concatenate((mom[0:splitpoint], dad[splitpoint:]))
             child_two = concatenate((dad[0:splitpoint], mom[splitpoint:]))
             child_one_sum = child_one.sum()
             child_two_sum = child_two.sum()
+            if array_equal(child_one,child_two):
+                twins = 1
 
 
         """Return the two children"""
@@ -103,13 +147,17 @@ class GA:
     def mutation(self,child,numOfFeatures):
 
         mutation_made = 0
-        while mutation_made != 1:
-            mutation = random.randint(0,numOfFeatures)
-            """Check if the random postion is 0, if it is change it to one"""
-            """Else look for another spot"""
-            if child[mutation] == 0:
-                child[mutation] = 1
-                mutation_made=1
+        """randomize the mutation chance less than 1<2000"""
+        chance_of_mutation = random.randint(0,2000)
+        if chance_of_mutation == 1:
+            while mutation_made != 1:
+                mutation = random.randint(0,numOfFeatures)
+                """Check if the random position is 0, if it is change it to one"""
+                """Else look for another spot"""
+
+                if child[mutation] == 0:
+                    child[mutation] = 1
+                    mutation_made = 1
         return child
 
     def Create_GA_Population(self, numOfPop, numOfFea, previousPop, ga_pop, fitness):
@@ -132,7 +180,7 @@ class GA:
         #counter = 4;
         """Create Children with parents, take parents in 2's, (0,1),(2,3)...(x-1,x)"""
         for x in range(0, ga_population-2, 2):
-            new_pop[j], new_pop[j + 1] = self.split_parents(previousPop[x], previousPop[x + 1], numOfFea)
+            new_pop[j], new_pop[j + 1] = self.split_parents_two(previousPop[x], previousPop[x + 1], numOfFea)
             new_pop[j] = self.mutation(new_pop[j],numOfFea)
             new_pop[j+1] = self.mutation(new_pop[j+1],numOfFea)
 

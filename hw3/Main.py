@@ -30,7 +30,7 @@ fileW = FromFitnessFileGA.createAnOutputFile()
 numOfPop = 50
 numOfFea = 396
 num_ga_pop = 20
-numberOfGenerations = 2000
+numberOfGenerations = 10
 
 """Read data from file"""
 TrainX, TrainY, ValidateX, ValidateY, TestX, TestY = FromDataFileGA.getAllOfTheData()
