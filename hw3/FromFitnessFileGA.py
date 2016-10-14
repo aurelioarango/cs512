@@ -162,7 +162,9 @@ def validate_model(model, fileW, population, TrainX, TrainY, ValidateX, Validate
 
         try:
             model_desc = model.fit(X_train_masked, TrainY)
+
         except:
+
             return unfit, fitness, None,None,None,None,None,None,None
 
         # Computed predicted values

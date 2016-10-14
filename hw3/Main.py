@@ -29,8 +29,8 @@ model = GA.GA()
 fileW = FromFitnessFileGA.createAnOutputFile()
 numOfPop = 50
 numOfFea = 396
-num_ga_pop = 20
-numberOfGenerations = 10
+num_ga_pop = 4
+numberOfGenerations =
 
 """Read data from file"""
 TrainX, TrainY, ValidateX, ValidateY, TestX, TestY = FromDataFileGA.getAllOfTheData()
@@ -49,6 +49,7 @@ parentsPopulation = zeros((2, numOfFea))
 parentsFitness = [0] * 2
 """Sorting population to get the best fitness"""
 model.sort_population(population, fitness, numOfPop)
+#polulation = sort(fitness,population, axis=0)
 
 parentsPopulation[0] = population[0]
 parentsPopulation[1] = population[1]
@@ -57,8 +58,11 @@ parentsFitness[1] = fitness[1]
 """Variable that keeps track of the last time fitness was updated, (changes)"""
 fitnessLastUpdated = 0
 
+
 """For loops goes through many generations up to 2000 and it checks every 500 if no changes were made"""
 for x in range(0, numberOfGenerations):
+    #print "-- Create first generation" + str(x)
+    random.seed()
     population = model.Create_GA_Population(numOfPop, numOfFea, population, num_ga_pop, fitness)
 
 

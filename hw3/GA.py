@@ -61,6 +61,7 @@ class GA:
         return V
 
     def Create_A_Population(self,numOfPop, numOfFea):
+
         population = random.random((numOfPop, numOfFea))
 
         for i in range(numOfPop):
@@ -88,9 +89,7 @@ class GA:
             """Reset children values"""
             child_one_sum = 0
             child_two_sum = 0
-
             splitpoint1 = random.randint(0, numOfFeatures)
-
             splitpoint2 = random.randint(splitpoint1, numOfFeatures)
             #print "Split point1 "+str(splitpoint1) +" Split point2 "+str(splitpoint2)
 
@@ -98,8 +97,9 @@ class GA:
             '''found that we did not need to seed the random because we did get
                different values every time we printed it'''
             child_one = concatenate((mom[0:splitpoint1], dad[splitpoint1:splitpoint2]))
+            #print shape(child_one)
             child_one = concatenate((child_one,mom[splitpoint2:]))
-
+            #print shape(child_one)
             child_two = concatenate((dad[0:splitpoint1], mom[splitpoint1:splitpoint2]))
             child_two = concatenate((child_two, dad[splitpoint2:]))
 
@@ -110,9 +110,9 @@ class GA:
                 #print "they are equal to each other"
                 twins=0
             else:
-                print "they are not equal to each other"
+                #print "they are not equal to each other"
                 twins = 1
-
+            #print "child one inside while " + str(child_one)
         """Return the two children"""
         return child_one, child_two
 
@@ -129,25 +129,31 @@ class GA:
             """Reset children values"""
             child_one_sum = 0
             child_two_sum = 0
-
+            random.seed(None)
             splitpoint = random.randint(0, numOfFeatures)
 
             '''found that we did not need to seed the random because we did get
                different values every time we printed it'''
             child_one = concatenate((mom[0:splitpoint], dad[splitpoint:]))
+            #print shape(child_one)
             child_two = concatenate((dad[0:splitpoint], mom[splitpoint:]))
+            #print shape(child_one)
+
             child_one_sum = child_one.sum()
             child_two_sum = child_two.sum()
+
+            #print "child one inside while " + child_one
             if array_equal(child_one,child_two):
                 twins = 1
 
-
+        print child_one
         """Return the two children"""
         return child_one, child_two
     def mutation(self,child,numOfFeatures):
 
         mutation_made = 0
         """randomize the mutation chance less than 1<2000"""
+        random.seed(random.randint(1,100))
         chance_of_mutation = random.randint(0,2000)
         if chance_of_mutation == 1:
             while mutation_made != 1:
@@ -164,6 +170,7 @@ class GA:
         """get the previous population"""
         """Sort population by fitness using a quick sort """
         self.sort_population(previousPop, fitness, numOfPop)
+        #print fitness
         """ Genetic algorithm population size"""
         ga_population = ga_pop
 
@@ -181,20 +188,49 @@ class GA:
         """Create Children with parents, take parents in 2's, (0,1),(2,3)...(x-1,x)"""
         for x in range(0, ga_population-2, 2):
             new_pop[j], new_pop[j + 1] = self.split_parents_two(previousPop[x], previousPop[x + 1], numOfFea)
-            new_pop[j] = self.mutation(new_pop[j],numOfFea)
-            new_pop[j+1] = self.mutation(new_pop[j+1],numOfFea)
+            #new_pop[j] = self.mutation(new_pop[j],numOfFea)
+            #new_pop[j+1] = self.mutation(new_pop[j+1],numOfFea)
 
             #print str(x) + " " + str(j)
             j = j+2
         """Create new random samples calling the function Create_A_Population """
         #print new_pop[19];
 
+
+        """matrix of size (numOfPop - ga_pop)x numOfFeat (30 x 396)"""
+
         random_population = self.Create_A_Population(numOfPop - ga_population, numOfFea)
+
+        new_random_row = self.Create_A_Population(1, numOfFea)
+        #counter = 20;
+
+        #for x in range(20):
+        #    if array_equal(new_random_row, new_pop[x]):
+        #        print "These two arrays are equal at " + str(x)
+
+        #while counter != 50:
+         #   if new_random_row not in new_pop:
+          #      new_pop = concatenate((new_pop, new_random_row))
+           #     counter = counter + 1
+            #    print counter
+            #else:
+
+
+                #print "new row is in new pop"
+
+#                new_random_row = self.Create_A_Population(1, numOfFea)
+
+
+
+        #for x in range(0, 20):
+        #    if new_pop[x] in random_population :
+        #       print "IS in the random_pop row from new pop " + str(x)
 
         if ga_population >= 2:
             #print "population greater than 2"
             new_pop = concatenate((new_pop, random_population))
         else:
+            print "something went wrong"
             new_pop = random_population
             return new_pop
 
