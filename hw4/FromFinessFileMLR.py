@@ -233,3 +233,24 @@ def write(model,fileW, trackDesc, trackFitness, trackModel, trackR2,\
 
 #------------------------------------------------------------------------------
 
+
+#------------------------------------------------------------------------------
+def createAnOutputFile():
+
+    file_name = None
+    algorithm = None
+
+
+    timestamp = time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime())
+    if ( (file_name == None) and (algorithm != None)):
+        file_name = "{}_{}_gen{}_{}.csv".format(alg.__class__.__name__,
+                        alg.model.__class__.__name__, alg.gen_max,timestamp)
+    elif file_name==None:
+        file_name = "{}.csv".format(timestamp)
+    fileOut = file(file_name, 'wb')
+    fileW = csv.writer(fileOut)
+
+    fileW.writerow(['Descriptor ID', 'Fitness', 'Model','R2', 'Q2', \
+            'R2Pred_Validation', 'R2Pred_Test'])
+
+    return fileW
