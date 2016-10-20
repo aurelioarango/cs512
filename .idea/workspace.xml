@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb350838-af1e-415f-9411-f56023bcba6f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hw4/DifferentialEvolution.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw4/FromFinessFileMLR.py" afterPath="$PROJECT_DIR$/hw4/FromFinessFileMLR.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw4/MainMLR.py" afterPath="$PROJECT_DIR$/hw4/MainMLR.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw4/main.py" afterPath="$PROJECT_DIR$/hw4/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw4/mlr.py" afterPath="$PROJECT_DIR$/hw4/mlr.py" />
     </list>
     <ignored path="cs512.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,12 +25,12 @@
     <favorites_list name="cs512" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hw4/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state relative-caret-position="563">
+              <caret line="58" column="75" selection-start-line="58" selection-start-column="75" selection-end-line="58" selection-end-column="75" />
               <folding>
                 <element signature="e#587#632#0" expanded="true" />
               </folding>
@@ -41,8 +41,8 @@
       <file leaf-file-name="MainMLR.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw4/MainMLR.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="541">
-              <caret line="40" column="38" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="38" />
+            <state relative-caret-position="198">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="50" />
               <folding>
                 <element signature="e#1#60#0" expanded="true" />
               </folding>
@@ -60,11 +60,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FromFinessFileMLR.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mlr.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hw4/mlr.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="468">
+              <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FromFinessFileMLR.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw4/FromFinessFileMLR.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="222" column="0" selection-start-line="222" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
+            <state relative-caret-position="667">
+              <caret line="217" column="22" selection-start-line="217" selection-start-column="17" selection-end-line="217" selection-end-column="22" />
               <folding>
                 <element signature="e#0#61#0" expanded="true" />
               </folding>
@@ -80,16 +90,6 @@
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw3/Main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-216">
-              <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -115,10 +115,11 @@
         <option value="$PROJECT_DIR$/hw3/FromFitnessFileGA.py" />
         <option value="$PROJECT_DIR$/hw3/GA.py" />
         <option value="$PROJECT_DIR$/hw3/Main.py" />
-        <option value="$PROJECT_DIR$/hw4/FromFinessFileMLR.py" />
-        <option value="$PROJECT_DIR$/hw4/main.py" />
         <option value="$PROJECT_DIR$/hw4/DifferentialEvolution.py" />
         <option value="$PROJECT_DIR$/hw4/MainMLR.py" />
+        <option value="$PROJECT_DIR$/hw4/mlr.py" />
+        <option value="$PROJECT_DIR$/hw4/FromFinessFileMLR.py" />
+        <option value="$PROJECT_DIR$/hw4/main.py" />
       </list>
     </option>
   </component>
@@ -153,7 +154,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -186,22 +186,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cs512" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cs512" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hw3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -210,7 +197,7 @@
       <recent name="$PROJECT_DIR$/hw4" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.TestGA">
+  <component name="RunManager" selected="Python.main">
     <configuration default="false" name="MainGA" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -241,6 +228,40 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="cs512" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hw3/Main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="MainMLR" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hw4" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="cs512" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hw4/MainMLR.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hw4" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="cs512" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hw4/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -379,14 +400,18 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Python.MainGA" />
       <item index="1" class="java.lang.String" itemvalue="Python.TestGA" />
+      <item index="2" class="java.lang.String" itemvalue="Python.MainMLR" />
+      <item index="3" class="java.lang.String" itemvalue="Python.main" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.TestGA" />
-        <item index="1" class="java.lang.String" itemvalue="Python.MainGA" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python.main" />
+        <item index="1" class="java.lang.String" itemvalue="Python.MainMLR" />
+        <item index="2" class="java.lang.String" itemvalue="Python.TestGA" />
+        <item index="3" class="java.lang.String" itemvalue="Python.MainGA" />
       </list>
     </recent_temporary>
   </component>
@@ -407,23 +432,23 @@
     <frame x="33" y="35" width="1887" height="1045" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15537634" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11050626" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3598258" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3818375" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908705" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -461,8 +486,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hw3/2016-10-12-22-33-18.csv" />
-    <entry file="file://$PROJECT_DIR$/hw3/2016-10-12-22-32-58.csv" />
     <entry file="file://$PROJECT_DIR$/hw3/2016-10-12-22-34-06.csv" />
     <entry file="file://$PROJECT_DIR$/hw3/2016-10-12-22-34-14.csv" />
     <entry file="file://$PROJECT_DIR$/hw3/2016-10-12-22-36-52.csv" />
@@ -515,9 +538,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="438">
           <caret line="222" column="0" selection-start-line="222" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
-          <folding>
-            <element signature="e#97#142#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -563,31 +583,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw3/Main.py">
+    <entry file="file://$PROJECT_DIR$/hw4/2016-10-20-14-05-41.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-216">
-          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+        <state relative-caret-position="-143">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw4/main.py">
+    <entry file="file://$PROJECT_DIR$/hw4/FromDataFileMLR.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="e#587#632#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-53">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw4/MainMLR.py">
+    <entry file="file://$PROJECT_DIR$/hw4/mlr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="40" column="38" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="38" />
-          <folding>
-            <element signature="e#1#60#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="468">
+          <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw3/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-576">
+          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -601,20 +625,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw4/FromDataFileMLR.py">
+    <entry file="file://$PROJECT_DIR$/hw4/FromFinessFileMLR.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-53">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="667">
+          <caret line="217" column="22" selection-start-line="217" selection-start-column="17" selection-end-line="217" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#61#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw4/FromFinessFileMLR.py">
+    <entry file="file://$PROJECT_DIR$/hw4/MainMLR.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="222" column="0" selection-start-line="222" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
+        <state relative-caret-position="198">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="50" />
           <folding>
-            <element signature="e#0#61#0" expanded="true" />
+            <element signature="e#1#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw4/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="563">
+          <caret line="58" column="75" selection-start-line="58" selection-start-column="75" selection-end-line="58" selection-end-column="75" />
+          <folding>
+            <element signature="e#587#632#0" expanded="true" />
           </folding>
         </state>
       </provider>

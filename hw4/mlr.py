@@ -17,7 +17,7 @@ class MLR:
         x_set = np.append(np.ones((x_set.shape[0], 1)), x_set, axis=1)
         """ returns the least squares solution for the population R or Q, """
         self.coef = np.linalg.lstsq(x_set, y_set)[0]
-        return 'MLR'
+        return 'DE'
     
     def predict(self, x_set):
         """Predict a Y from an X, object must already be fitted."""

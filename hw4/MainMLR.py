@@ -10,6 +10,7 @@ import sys
 import mlr
 import FromDataFileMLR
 import FromFinessFileMLR
+import DifferentialEvolution
 				
 
 #------------------------------------------------------------------------------
@@ -38,6 +39,7 @@ def main():
     unfit = 1000
     fittingStatus = unfit
     """Create a population based on the number of features selected, in this case 10, from the pool of features"""
+
     population = DifferentialEvolution.Create_A_Population(numOfPop,numOfFea)
     fittingStatus, fitness = FromFinessFileMLR.validate_model(model,fileW, population, \
         TrainX, TrainY, ValidateX, ValidateY, TestX, TestY)
