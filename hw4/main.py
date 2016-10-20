@@ -59,12 +59,18 @@ fittingStatus, fitness = FromFinessFileMLR.validate_model(model, fileW, populati
 """Create functions in the Differential Evolution class for the following: """
 """grab best model-fitness (row) and move it to new pop in same index"""
 
-"""calculate new V, from 3 randomly selected distinct vectors not including the current row.
-    F = 0.5
-    V[i]= v[i]3 + F * ( v[i]2 - v[i]1)"""
+DifferentialEvolution.create_DE_population(numOfPop, numOfFea,fitness)
+
+
 
 """calculate its fitness and compare to the old vector.
     if the new fitness is better than the old one then replace it in the pop
      otherwise, keep old vector."""
 
 print fitness
+
+print len(fitness)
+
+print str(argmin(fitness)) +" "+str( fitness[argmin(fitness)])
+
+DifferentialEvolution.create_DE_population(numOfPop, numOfFea,fitness,population)

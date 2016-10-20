@@ -33,3 +33,20 @@ def Create_A_Population(numOfPop, numOfFea):
         for j in range(numOfFea):
             population[i][j] = V[j]
     return population
+
+def create_DE_population(numOfPop, numOfFea, fitness, old_pop):
+    """Look for index of best fitness"""
+    best_fitness_index = argmin(fitness)
+    """Create empty Population"""
+    new_pop = zeros((numOfPop, numOfFea))
+    """Move best model(pop) from old to new pop"""
+    new_pop[best_fitness_index] = old_pop[best_fitness_index]
+    """calculate new V, from 3 randomly selected distinct vectors not including the current row.
+        F = 0.5
+        V[i]= v[i]3 + F * ( v[i]2 - v[i]1)"""
+
+
+def get_new_pop(numOfPop, numOfFea, fitness, old_pop):
+    """calculate new V, from 3 randomly selected distinct vectors not including the current row.
+            F = 0.5
+            V[i]= v[i]3 + F * ( v[i]2 - v[i]1)"""
