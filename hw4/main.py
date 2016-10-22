@@ -27,8 +27,8 @@ import FromDataFileMLR
 import FromFinessFileMLR
 import DifferentialEvolution
 
-#fileW = FromFinessFileMLR.createAnOutputFile()
-fileW = 0
+fileW = FromFinessFileMLR.createAnOutputFile()
+#fileW = 0
 model = mlr.MLR()
 
 #Number of descriptor should be 396 and number of population should be 50 or more
@@ -60,7 +60,7 @@ fittingStatus, fitness = FromFinessFileMLR.validate_model(model, fileW, populati
 """grab best model-fitness (row) and move it to new pop in same index"""
 #DifferentialEvolution.create_DE_population(numOfPop, numOfFea,fitness,population)
 
-pop, fit = DifferentialEvolution.create_DE_population(numOfPop, numOfFea,fitness,population)
+pop, fit = DifferentialEvolution.create_DE_population(numOfPop, numOfFea,fitness,population,fileW)
 
 print str(shape(pop))
 print fitness

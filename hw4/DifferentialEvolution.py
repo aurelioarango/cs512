@@ -34,7 +34,7 @@ def Create_A_Population(numOfPop, numOfFea):
             population[i][j] = V[j]
     return population
 
-def create_DE_population(numOfPop, numOfFea, fitness, old_pop):
+def create_DE_population(numOfPop, numOfFea, fitness, old_pop,fileW):
     """Look for index of best fitness"""
     best_fitness_index = argmin(fitness)
     """Create empty Population"""
@@ -47,7 +47,8 @@ def create_DE_population(numOfPop, numOfFea, fitness, old_pop):
         #print str(shape(new_vector))
         #print str(shape(old_pop[index]))
 
-        new_vector_fitness =cal_fitness_DE(new_vector)
+        new_vector_fitness = cal_fitness_DE(new_vector)
+
         """Checks if is not the best fitness index for the given row,
             if is not equal compare new fitness vs old
             and move best row to new_pop"""
@@ -57,6 +58,7 @@ def create_DE_population(numOfPop, numOfFea, fitness, old_pop):
                 fitness[index] = new_vector_fitness
                 """Assign new Vector"""
                 new_pop[index] = new_vector
+
             else:
                 new_pop[index] = old_pop[index]
 
@@ -88,8 +90,8 @@ def cal_fitness_DE(new_vector):
     TrainX, TrainY, ValidateX, ValidateY, TestX, TestY = FromDataFileMLR.getAllOfTheData()
     TrainX, ValidateX, TestX = FromDataFileMLR.rescaleTheData(TrainX, ValidateX, TestX)
 
-    fittingStatus, fitness = FromFinessFileMLR.validate_single_model(model, new_vector, \
-                                                              TrainX, TrainY, ValidateX, ValidateY, TestX, TestY)
+    fitness = FromFinessFileMLR.validate_single_model(model, new_vector, \
+                                    TrainX, TrainY, ValidateX, ValidateY, TestX, TestY)
 
     return fitness
 

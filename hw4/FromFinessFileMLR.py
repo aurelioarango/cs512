@@ -215,8 +215,8 @@ def validate_model(model, fileW, population, TrainX, TrainY, ValidateX, Validate
         for i in range(len(yHatTest[idx])):
             yHatTest[idx][i] = FromDataFileMLR.getTwoDecPoint(yHatTest[idx][i])
 
-    #write(model,fileW, trackDesc, trackFitness, trackModel, trackR2,\
-    #            trackQ2,trackR2PredValidation, trackR2PredTest)
+    write(model,fileW, trackDesc, trackFitness, trackModel, trackR2,\
+                trackQ2,trackR2PredValidation, trackR2PredTest)
 
     return itFits, fitness
 #------------------------------------------------------------------------------  
@@ -321,7 +321,7 @@ def validate_single_model(model, vector, TrainX, TrainY, ValidateX, ValidateY, T
     for i in range(len(yHatTest[idx])):
         yHatTest[idx][i] = FromDataFileMLR.getTwoDecPoint(yHatTest[idx][i])
 
-    return itFits, fitness
+    return fitness
 
 def write(model,fileW, trackDesc, trackFitness, trackModel, trackR2,\
                 trackQ2,trackR2PredValidation, trackR2PredTest):
@@ -334,7 +334,12 @@ def write(model,fileW, trackDesc, trackFitness, trackModel, trackR2,\
     #fileOut.close()
 
 #------------------------------------------------------------------------------
-
+def append_to_file(fileW, trackDesc, trackFitness, trackModel, trackR2,\
+                trackQ2,trackR2PredValidation, trackR2PredTest):
+    """Append new vector to file"""
+    for key in trackFitness.keys():
+        fileW.writerow([trackDesc[key], trackFitness[key], trackModel[key], \
+                    trackR2[key], trackQ2[key], trackR2PredValidation[key], trackR2PredTest[key]])
 
 #------------------------------------------------------------------------------
 def createAnOutputFile():
