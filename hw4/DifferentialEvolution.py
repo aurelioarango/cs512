@@ -41,12 +41,77 @@ def create_DE_population(numOfPop, numOfFea, fitness, old_pop):
     new_pop = zeros((numOfPop, numOfFea))
     """Move best model(pop) from old to new pop"""
     new_pop[best_fitness_index] = old_pop[best_fitness_index]
-    """calculate new V, from 3 randomly selected distinct vectors not including the current row.
-        F = 0.5
-        V[i]= v[i]3 + F * ( v[i]2 - v[i]1)"""
 
 
-def get_new_pop(numOfPop, numOfFea, fitness, old_pop):
+
+
+"""creates the new vector from the three distinct vectors in the old population"""
+def get_new_pop_vec(numOfPop, numOfFea, old_pop, index_position):
     """calculate new V, from 3 randomly selected distinct vectors not including the current row.
             F = 0.5
             V[i]= v[i]3 + F * ( v[i]2 - v[i]1)"""
+    F = 0.5
+    vi1, vi2, vi3 = create_three_random_v_indices(index_position, numOfPop)
+    new_vector = [0]*numOfFea
+
+    vector_1 = old_pop[vi1]
+    vector_2 = old_pop[vi2]
+    vector_3 = old_pop[vi3]
+
+    for x in range(0,numOfFea):
+        new_vector[x] = vector_3[x] + F * (vector_2[x] - vector_1[x])
+    return new_vector
+
+"""get fitness of the new vector"""
+
+def cal_fitness_DE(new_vector ):
+
+    print new_vector
+    model = mlr.MLR()
+    TrainX, TrainY, ValidateX, ValidateY, TestX, TestY = FromDataFileMLR.getAllOfTheData()
+    TrainX, ValidateX, TestX = FromDataFileMLR.rescaleTheData(TrainX, ValidateX, TestX)
+
+    fittingStatus, fitness = FromFinessFileMLR.validate_single_model(model, new_vector, \
+                                                              TrainX, TrainY, ValidateX, ValidateY, TestX, TestY)
+
+    return fitness
+
+
+"""gathers the three indices needed to create the new child"""
+def create_three_random_v_indices(current_vector_index, numOfPop):
+    """Get vector index 1"""
+    while True:
+        v_index_1 = random.randint(0,numOfPop)
+        if (v_index_1 != current_vector_index):
+            break
+    """Get vector index 2"""
+    while True:
+        v_index_2 = random.randint(0, numOfPop)
+        if (v_index_2 != v_index_1 and v_index_2 != current_vector_index):
+            break
+    """Get vector index 3"""
+    while True:
+        v_index_3 = random.randint(0, numOfPop)
+        if (v_index_3 != v_index_1 and v_index_3 != v_index_2 and v_index_3 != current_vector_index):
+            break
+    #print "v_index_1 = " + str(v_index_1) + "\nv_index_2 = " + str(v_index_2) + "\nv_index_3 = " + str(v_index_3) + "\ncurrent_vector_index = " + str(current_vector_index)
+    return v_index_1, v_index_2, v_index_3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

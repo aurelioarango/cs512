@@ -59,7 +59,7 @@ fittingStatus, fitness = FromFinessFileMLR.validate_model(model, fileW, populati
 """Create functions in the Differential Evolution class for the following: """
 """grab best model-fitness (row) and move it to new pop in same index"""
 
-DifferentialEvolution.create_DE_population(numOfPop, numOfFea,fitness)
+#DifferentialEvolution.create_DE_population(numOfPop, numOfFea,fitness)
 
 
 
@@ -67,10 +67,16 @@ DifferentialEvolution.create_DE_population(numOfPop, numOfFea,fitness)
     if the new fitness is better than the old one then replace it in the pop
      otherwise, keep old vector."""
 
-print fitness
+#print fitness
 
-print len(fitness)
+#print len(fitness)
 
-print str(argmin(fitness)) +" "+str( fitness[argmin(fitness)])
+#print str(argmin(fitness)) +" "+str( fitness[argmin(fitness)])
 
-DifferentialEvolution.create_DE_population(numOfPop, numOfFea,fitness,population)
+#DifferentialEvolution.create_DE_population(numOfPop, numOfFea,fitness,population)
+
+"""5 is the index position we are currently trying to fill"""
+DifferentialEvolution.create_three_random_v_indices(5, numOfPop)
+
+fit = DifferentialEvolution.cal_fitness_DE(population[0])
+print fit
