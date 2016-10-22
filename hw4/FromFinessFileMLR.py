@@ -103,7 +103,7 @@ def initializeYDimension():
 #------------------------------------------------------------------------------
 def OnlySelectTheOnesColumns(popI):
 
-    numOfFea = popI.shape[0]  # get total number of features
+    numOfFea = 385#popI.shape[0]  # get total number of features
     xi = zeros(numOfFea)  # create an array with the total number of features
     for j in range(numOfFea):
        xi[j] = popI[j]  # copying elements from one array to another

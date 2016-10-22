@@ -42,8 +42,25 @@ def create_DE_population(numOfPop, numOfFea, fitness, old_pop):
     """Move best model(pop) from old to new pop"""
     new_pop[best_fitness_index] = old_pop[best_fitness_index]
 
+    for index in range(0,numOfPop):
+        new_vector = get_new_pop_vec(numOfPop,numOfFea,old_pop,index)
+        #print str(shape(new_vector))
+        #print str(shape(old_pop[index]))
 
+        new_vector_fitness =cal_fitness_DE(new_vector)
+        """Checks if is not the best fitness index for the given row,
+            if is not equal compare new fitness vs old
+            and move best row to new_pop"""
+        if index != best_fitness_index:
+            if(new_vector_fitness<fitness[index]):
+                """Assign fitness"""
+                fitness[index] = new_vector_fitness
+                """Assign new Vector"""
+                new_pop[index] = new_vector
+            else:
+                new_pop[index] = old_pop[index]
 
+    return new_pop, fitness
 
 """creates the new vector from the three distinct vectors in the old population"""
 def get_new_pop_vec(numOfPop, numOfFea, old_pop, index_position):
@@ -64,9 +81,9 @@ def get_new_pop_vec(numOfPop, numOfFea, old_pop, index_position):
 
 """get fitness of the new vector"""
 
-def cal_fitness_DE(new_vector ):
+def cal_fitness_DE(new_vector):
 
-    print new_vector
+    #print new_vector
     model = mlr.MLR()
     TrainX, TrainY, ValidateX, ValidateY, TestX, TestY = FromDataFileMLR.getAllOfTheData()
     TrainX, ValidateX, TestX = FromDataFileMLR.rescaleTheData(TrainX, ValidateX, TestX)
