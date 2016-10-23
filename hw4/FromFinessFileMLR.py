@@ -361,3 +361,107 @@ def createAnOutputFile():
             'R2Pred_Validation', 'R2Pred_Test'])
 
     return fileW
+#---------------------------------------------------------------------------
+def validate_model_and_append(model, fileW, vector, TrainX, TrainY, ValidateX, ValidateY, TestX, TestY):
+    # numOfPop = population.shape[0]  # get the population based on the number of features selected
+    """Create an array based on the population size"""
+    # fitness = zeros(numOfPop)
+    fitness = 0
+    c = 2
+    """ initialize booleans for false=0 and true =1"""
+    false = 0
+    true = 1
+    predictive = false
+
+    """Initialize all arrays/matrices, """
+    trackDesc, trackFitness, trackModel, trackR2, trackQ2, \
+    trackR2PredValidation, trackR2PredTest = InitializeTracks()
+
+    yTrain, yHatTrain, yHatCV, yValidation, \
+    yHatValidation, yTest, yHatTest = initializeYDimension()
+
+    unfit = 1000
+    itFits = 1
+
+    """Get columns that have a value of one and eliminate the rest"""
+    xi = OnlySelectTheOnesColumns(vector)
+    """Store data in a hash table for fast look up and encrypt the data using sha1"""
+    idx = hashlib.sha1(array(xi)).digest()
+
+    X_train_masked = TrainX.T[xi].T
+
+    X_validation_masked = ValidateX.T[xi].T
+    X_test_masked = TestX.T[xi].T
+
+    try:
+        model_desc = model.fit(X_train_masked, TrainY)
+    except:
+        return unfit, fitness
+
+    # Computed predicted values
+    Yhat_cv = cv_predict(model, X_train_masked, TrainY)  # Cross Validation
+    Yhat_validation = model.predict(X_validation_masked)
+    Yhat_test = model.predict(X_test_masked)
+
+    # Compute R2 statistics (Prediction for Valiation and Test set)
+    q2_loo = r2(TrainY, Yhat_cv)
+    q2_loo = FromDataFileMLR.getTwoDecPoint(q2_loo)
+
+    r2pred_validation = r2Pred(TrainY, ValidateY, Yhat_validation)
+    r2pred_validation = FromDataFileMLR.getTwoDecPoint(r2pred_validation)
+
+    r2pred_test = r2Pred(TrainY, TestY, Yhat_test)
+    r2pred_test = FromDataFileMLR.getTwoDecPoint(r2pred_test)
+
+    Y_fitness = append(TrainY, ValidateY)
+    Yhat_fitness = append(Yhat_cv, Yhat_validation)
+
+    fitness = calc_fitness(xi, Y_fitness, Yhat_fitness, c)
+
+    if predictive and ((q2_loo < 0.5) or (r2pred_validation < 0.5) or (r2pred_test < 0.5)):
+        # if it's not worth recording, just return the fitness
+        print "ending the program because of predictive is: ", predictive
+
+    # Compute predicted Y_hat for training set.
+    Yhat_train = model.predict(X_train_masked)
+    r2_train = r2(TrainY, Yhat_train)
+
+    idxLength = len(xi)
+
+    # store stats
+    trackDesc[idx] = str(xi)
+
+    trackFitness[idx] = FromDataFileMLR.getTwoDecPoint(fitness)
+
+    trackModel[idx] = model_desc
+
+    trackR2[idx] = FromDataFileMLR.getTwoDecPoint(r2_train)
+    trackQ2[idx] = FromDataFileMLR.getTwoDecPoint(q2_loo)
+    trackR2PredValidation[idx] = FromDataFileMLR.getTwoDecPoint(r2pred_validation)
+    trackR2PredTest[idx] = FromDataFileMLR.getTwoDecPoint(r2pred_test)
+
+    yTrain[idx] = TrainY.tolist()
+
+    yHatTrain[idx] = Yhat_train.tolist()
+    for i in range(len(yHatTrain[idx])):
+        yHatTrain[idx][i] = FromDataFileMLR.getTwoDecPoint(yHatTrain[idx][i])
+
+    yHatCV[idx] = Yhat_cv.tolist()
+    for i in range(len(yHatCV[idx])):
+        yHatCV[idx][i] = FromDataFileMLR.getTwoDecPoint(yHatCV[idx][i])
+
+    yValidation[idx] = ValidateY.tolist()
+
+    yHatValidation[idx] = Yhat_validation.tolist()
+    for i in range(len(yHatValidation[idx])):
+        yHatValidation[idx][i] = FromDataFileMLR.getTwoDecPoint(yHatValidation[idx][i])
+
+    yTest[idx] = TestY.tolist()
+
+    yHatTest[idx] = Yhat_test.tolist()
+    for i in range(len(yHatTest[idx])):
+        yHatTest[idx][i] = FromDataFileMLR.getTwoDecPoint(yHatTest[idx][i])
+
+    write(model, fileW, trackDesc, trackFitness, trackModel, trackR2, \
+          trackQ2, trackR2PredValidation, trackR2PredTest)
+

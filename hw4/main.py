@@ -59,7 +59,7 @@ fittingStatus, fitness = FromFinessFileMLR.validate_model(model, fileW, populati
 """Create functions in the Differential Evolution class for the following: """
 """grab best model-fitness (row) and move it to new pop in same index"""
 #DifferentialEvolution.create_DE_population(numOfPop, numOfFea,fitness,population)
-generations_to_run = 2000
+generations_to_run = 2
 fit = fitness
 iterations_since_best_fitness_has_changed = 0
 
@@ -72,8 +72,9 @@ for i in range(0,generations_to_run):
     fitness = fit
     best_fitness_index = argmin(fitness)
     pop, fit = DifferentialEvolution.create_DE_population(numOfPop, numOfFea,fitness,population,fileW)
-    FromFinessFileMLR.validate_model(model, fileW, pop, \
-                                                TrainX, TrainY, ValidateX, ValidateY, TestX, TestY)
+    """Appending whole generations, can potentially include duplicates"""
+    #FromFinessFileMLR.validate_model(model, fileW, pop, \
+    #                                            TrainX, TrainY, ValidateX, ValidateY, TestX, TestY)
     if argmin(fit)==argmin(fitness):
         iterations_since_best_fitness_has_changed = iterations_since_best_fitness_has_changed + 1
 #print str(shape(pop))

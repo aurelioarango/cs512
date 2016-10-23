@@ -62,6 +62,8 @@ def create_DE_population(numOfPop, numOfFea, fitness, old_pop,fileW):
                 new_fitness[index] = new_vector_fitness
                 """Assign new Vector"""
                 new_pop[index] = new_vector
+                """Appending to file only new vectors"""
+                append_to_file(new_vector,fileW)
                 #print str(new_fitness[index]) + " value stored in new fitness\n"
             else:
                 #print str(fitness[index]) + " is old vector fitness"
@@ -88,6 +90,15 @@ def get_new_pop_vec(numOfPop, numOfFea, old_pop, index_position):
     for x in range(0,numOfFea):
         new_vector[x] = vector_3[x] + F * (vector_2[x] - vector_1[x])
     return new_vector
+"""get fitness of the new vector"""
+def append_to_file(new_vector,fileW):
+    #print new_vector
+    model = mlr.MLR()
+    TrainX, TrainY, ValidateX, ValidateY, TestX, TestY = FromDataFileMLR.getAllOfTheData()
+    TrainX, ValidateX, TestX = FromDataFileMLR.rescaleTheData(TrainX, ValidateX, TestX)
+
+    FromFinessFileMLR.validate_model_and_append(model,fileW, new_vector, \
+                                    TrainX, TrainY, ValidateX, ValidateY, TestX, TestY)
 
 """get fitness of the new vector"""
 def cal_fitness_DE(new_vector):
