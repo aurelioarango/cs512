@@ -354,7 +354,7 @@ def createAnOutputFile():
                         alg.model.__class__.__name__, alg.gen_max,timestamp)
     elif file_name==None:
         file_name = "{}.csv".format(timestamp)
-    fileOut = file(file_name, 'wb')
+    fileOut = file(file_name, 'ab')
     fileW = csv.writer(fileOut)
 
     fileW.writerow(['Descriptor ID', 'Fitness', 'Model','R2', 'Q2', \

@@ -54,16 +54,37 @@ fittingStatus = unfit
 population = DifferentialEvolution.Create_A_Population(numOfPop, numOfFea)
 """ Get fitness for the population"""
 fittingStatus, fitness = FromFinessFileMLR.validate_model(model, fileW, population, \
-                                                          TrainX, TrainY, ValidateX, ValidateY, TestX, TestY)
+                                                TrainX, TrainY, ValidateX, ValidateY, TestX, TestY)
 
 """Create functions in the Differential Evolution class for the following: """
 """grab best model-fitness (row) and move it to new pop in same index"""
 #DifferentialEvolution.create_DE_population(numOfPop, numOfFea,fitness,population)
+generations_to_run = 2000
+fit = fitness
+iterations_since_best_fitness_has_changed = 0
 
-pop, fit = DifferentialEvolution.create_DE_population(numOfPop, numOfFea,fitness,population,fileW)
+for i in range(0,generations_to_run):
+    print "Running Generation " + str(i)
+    if iterations_since_best_fitness_has_changed == 500:
+        print "Program stopped - the best fitness has not changed in 500 generations"
+        break
 
-print str(shape(pop))
-print fitness
+    fitness = fit
+    best_fitness_index = argmin(fitness)
+    pop, fit = DifferentialEvolution.create_DE_population(numOfPop, numOfFea,fitness,population,fileW)
+    FromFinessFileMLR.validate_model(model, fileW, pop, \
+                                                TrainX, TrainY, ValidateX, ValidateY, TestX, TestY)
+    if argmin(fit)==argmin(fitness):
+        iterations_since_best_fitness_has_changed = iterations_since_best_fitness_has_changed + 1
+#print str(shape(pop))
+#print fitness
+#print fit
+#print "\n"
+
+#for x in range(0, numOfPop):
+#    if(fitness[x] != fit[x]):
+#        print "x = " + str(x) + " : (fitness) " + str(fitness[x]) + " != (fit) " + str(fit[x])
+
 
 """calculate its fitness and compare to the old vector.
     if the new fitness is better than the old one then replace it in the pop

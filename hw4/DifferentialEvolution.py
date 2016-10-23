@@ -41,6 +41,7 @@ def create_DE_population(numOfPop, numOfFea, fitness, old_pop,fileW):
     new_pop = zeros((numOfPop, numOfFea))
     """Move best model(pop) from old to new pop"""
     new_pop[best_fitness_index] = old_pop[best_fitness_index]
+    new_fitness = zeros(numOfPop)
 
     for index in range(0,numOfPop):
         new_vector = get_new_pop_vec(numOfPop,numOfFea,old_pop,index)
@@ -52,17 +53,24 @@ def create_DE_population(numOfPop, numOfFea, fitness, old_pop,fileW):
         """Checks if is not the best fitness index for the given row,
             if is not equal compare new fitness vs old
             and move best row to new_pop"""
-        if index != best_fitness_index:
-            if(new_vector_fitness<fitness[index]):
+        if (index != best_fitness_index):
+
+
+            if(new_vector_fitness < fitness[index]):
+                #print str(new_vector_fitness) + " is new vector fitness *******"
                 """Assign fitness"""
-                fitness[index] = new_vector_fitness
+                new_fitness[index] = new_vector_fitness
                 """Assign new Vector"""
                 new_pop[index] = new_vector
-
+                #print str(new_fitness[index]) + " value stored in new fitness\n"
             else:
+                #print str(fitness[index]) + " is old vector fitness"
                 new_pop[index] = old_pop[index]
+                new_fitness[index] = fitness[index]
 
-    return new_pop, fitness
+        else:
+            new_fitness[index] = fitness[index]
+    return new_pop, new_fitness
 
 """creates the new vector from the three distinct vectors in the old population"""
 def get_new_pop_vec(numOfPop, numOfFea, old_pop, index_position):
@@ -82,9 +90,7 @@ def get_new_pop_vec(numOfPop, numOfFea, old_pop, index_position):
     return new_vector
 
 """get fitness of the new vector"""
-
 def cal_fitness_DE(new_vector):
-
     #print new_vector
     model = mlr.MLR()
     TrainX, TrainY, ValidateX, ValidateY, TestX, TestY = FromDataFileMLR.getAllOfTheData()
@@ -92,7 +98,6 @@ def cal_fitness_DE(new_vector):
 
     fitness = FromFinessFileMLR.validate_single_model(model, new_vector, \
                                     TrainX, TrainY, ValidateX, ValidateY, TestX, TestY)
-
     return fitness
 
 
