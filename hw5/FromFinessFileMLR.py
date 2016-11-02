@@ -218,7 +218,7 @@ def validate_model(model, fileW, population, TrainX, TrainY, ValidateX, Validate
     write(model,fileW, trackDesc, trackFitness, trackModel, trackR2,\
                 trackQ2,trackR2PredValidation, trackR2PredTest)
 
-    return itFits, fitness
+    return fitness
 #------------------------------------------------------------------------------  
 
 def validate_single_model(model, vector, TrainX, TrainY, ValidateX, ValidateY, TestX, TestY):

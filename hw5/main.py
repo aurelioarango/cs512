@@ -1,4 +1,5 @@
-""" HW5 BPSO
+""" HW5 (BPSO)
+        Binary Particle swarm optimization
     CS512
     Aurelio Arango, Kristina Nystrom, Marshia Hashemi  """
 """
@@ -45,9 +46,64 @@
         term2 = c2*random.random()*(globalBestRow[j]-population[i][j])
         velocity[i][j]=(inertiaWeight*velocity[i][j])+term1+term2
 
-Notes:
+    Notes:
     Alpha value starts from .5 and stopping is .33,
     How much should be reduce by .17/2000 (difference/number of iterations).
 
     Beta 0.004
  """
+
+
+import time  # provides timing for benchmarks
+from numpy import *  # provides complex math and array functions
+from sklearn import svm  # provides Support Vector Regression
+import csv
+import math
+import sys
+
+# Local files created by me
+import mlr
+import FromDataFileMLR
+import FromFinessFileMLR
+import BPSO
+
+"""Create the output file"""
+
+fileW = FromFinessFileMLR.createAnOutputFile()
+#fileW = 0
+model = mlr.MLR()
+
+#Number of descriptor should be 396 and number of population should be 50 or more
+"""Number of population"""
+numOfPop = 50
+"""Number of total features"""
+numOfFea = 385
+
+# Final model requirements
+
+R2req_train    = .6
+R2req_validate = .5
+R2req_test     = .5
+
+TrainX, TrainY, ValidateX, ValidateY, TestX, TestY = FromDataFileMLR.getAllOfTheData()
+TrainX, ValidateX, TestX = FromDataFileMLR.rescaleTheData(TrainX, ValidateX, TestX)
+
+""" Generate randomly population with 385 features and 50 pop """
+
+population = BPSO.Create_A_Population(numOfPop, numOfFea)
+""" Get fitness"""
+fitness = FromFinessFileMLR.validate_model(model, fileW, population, \
+                                                TrainX, TrainY, ValidateX, ValidateY, TestX, TestY)
+"""Initialize velocity"""
+initial_velocity=BPSO.create_initial_velocity(numOfPop,numOfFea)
+print initial_velocity
+#print str(shape(initial_velocity))
+
+"""Initialize Local Best Matrix (Same as Initial Population)"""
+local_best_matrix = population
+
+"""Create Global best row"""
+global_best_row_index = argmin(fitness)
+global_best_row=population[global_best_row_index]
+#global_best_row=population[argmin(fitness)]
+

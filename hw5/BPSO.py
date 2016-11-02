@@ -9,8 +9,24 @@ import sys
 import mlr
 import FromDataFileMLR
 import FromFinessFileMLR
+"""
+Create Initial Velocity
+Created randomly 50*385
+How to find the initial velocity:
+for (i=0; i<50; i++)
+    for (j=0; j<385; j++)
+    {
+           V[i, j] = random number between 0 and 1; // this is not binary. It is between 0 and 1
+    }
+"""
+def create_initial_velocity(numOfPop, numOfFea ):
 
+    initial_velocity = random.random((numOfPop, numOfFea))
+    for i in range(0,numOfPop):
+        for j in range(0, numOfFea ):
+            initial_velocity[i][j]= random.uniform(0,1)
 
+    return initial_velocity
 #------------------------------------------------------------------------------
 def getAValidrow(numOfFea, eps=0.015):
     sum = 0
@@ -25,6 +41,13 @@ def getAValidrow(numOfFea, eps=0.015):
        sum = V.sum()
     return V
 #------------------------------------------------------------------------------
+def create_new_BPSO_population( ):
+    """"""
+
+def find_alpha(previous_alpha,total_num_iterations ):
+    new_alpha=previous_alpha - (.17/total_num_iterations)
+
+    return new_alpha
 
 def Create_A_Population(numOfPop, numOfFea):
     population = random.random((numOfPop,numOfFea))
