@@ -4,13 +4,13 @@
     Aurelio Arango, Kristina Nystrom, Marshia Hashemi  """
 """
 1)
-    Make initial population 50x385 - randomly
+    Make initial population 50x385 - randomly - and calculate fitness
 2)
     Create Initial Velocity
-        Created randomly 50*385
+        Created randomly 50*396
         How to find the initial velocity:
         for (i=0; i<50; i++)
-            for (j=0; j<385; j++)
+            for (j=0; j<396; j++)
             {
                    V[i, j] = random number between 0 and 1; // this is not binary. It is between 0 and 1
             }
@@ -19,10 +19,8 @@
 4)
     Create Global best row
         the row with the best fitness
-5)
-    Find the fitness of each row
 
-6)
+5)
    Find the new population
     -	Find the value of alpha
         -   During the 2000 iterations, the value of alpha ranges from 0.5 to 0.33.
@@ -30,6 +28,8 @@
             reduce the value of alpha in each iteration (2000 iterations) we need to divide
             0.17 by 2000 to know how much in each iteration we need to subtract from the
             value of alpha
+6)
+    Find the fitness of each row
 7)
     Update the local best fitness
         Updating the new local best Matrix:
@@ -77,18 +77,18 @@ model = mlr.MLR()
 """Number of population"""
 numOfPop = 50
 """Number of total features"""
-numOfFea = 385
+numOfFea = 396
 
 # Final model requirements
 
 R2req_train    = .6
 R2req_validate = .5
 R2req_test     = .5
+alpha = 0.5
+beta = 0.004
 
 TrainX, TrainY, ValidateX, ValidateY, TestX, TestY = FromDataFileMLR.getAllOfTheData()
 TrainX, ValidateX, TestX = FromDataFileMLR.rescaleTheData(TrainX, ValidateX, TestX)
-
-""" Generate randomly population with 385 features and 50 pop """
 
 population = BPSO.Create_A_Population(numOfPop, numOfFea)
 """ Get fitness"""
@@ -107,3 +107,5 @@ global_best_row_index = argmin(fitness)
 global_best_row=population[global_best_row_index]
 #global_best_row=population[argmin(fitness)]
 
+""" call new population- based on old population, velocity, global and local best"""
+alpha, new_population = BPSO.create_new_BPSO_population(numOfFea, alpha, population, initial_velocity, local_best_matrix, global_best_row)

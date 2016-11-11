@@ -41,8 +41,25 @@ def getAValidrow(numOfFea, eps=0.015):
        sum = V.sum()
     return V
 #------------------------------------------------------------------------------
-def create_new_BPSO_population( ):
-    """"""
+"""create new population- based on old population, velocity, global and local best"""
+def create_new_BPSO_population(numOfFea, alpha, population, velocity, localbest, globalbest):
+
+    new_population = zeros(shape(population))
+    p = 0.5 * (1 + alpha)
+    for i in range(numOfFea):
+        for j in range(numOfFea):
+            if velocity[i][j] <= alpha:
+                new_population[i][j] = population[i][j]
+            elif velocity[i][j] > alpha and velocity[i][j] <= p:
+                new_population[i][j] = localbest[i][j]
+            elif velocity[i][j] > p and velocity[i][j] <=1:
+                new_population[i][j] = globalbest[j]
+            else:
+                new_population[i][j] = population[i][j]
+    alpha = find_alpha(alpha, 2000)
+
+    return alpha, new_population
+
 
 def find_alpha(previous_alpha,total_num_iterations ):
     new_alpha=previous_alpha - (.17/total_num_iterations)
@@ -53,49 +70,11 @@ def Create_A_Population(numOfPop, numOfFea):
     population = random.random((numOfPop,numOfFea))
     for i in range(numOfPop):
         V = getAValidrow(numOfFea)
+        """ getAValidrow function calculates 0.015 percent of the population """
         for j in range(numOfFea):
             population[i][j] = V[j]
     return population
 
-def create_DE_population(numOfPop, numOfFea, fitness, old_pop,fileW):
-    """Look for index of best fitness"""
-    best_fitness_index = argmin(fitness)
-    """Create empty Population"""
-    new_pop = zeros((numOfPop, numOfFea))
-    """Move best model(pop) from old to new pop"""
-    new_pop[best_fitness_index] = old_pop[best_fitness_index]
-    new_fitness = zeros(numOfPop)
-
-    for index in range(0,numOfPop):
-        new_vector = get_new_pop_vec(numOfPop,numOfFea,old_pop,index)
-        #print str(shape(new_vector))
-        #print str(shape(old_pop[index]))
-
-        new_vector_fitness = cal_fitness_DE(new_vector)
-
-        """Checks if is not the best fitness index for the given row,
-            if is not equal compare new fitness vs old
-            and move best row to new_pop"""
-        if (index != best_fitness_index):
-
-
-            if(new_vector_fitness < fitness[index]):
-                #print str(new_vector_fitness) + " is new vector fitness *******"
-                """Assign fitness"""
-                new_fitness[index] = new_vector_fitness
-                """Assign new Vector"""
-                new_pop[index] = new_vector
-                """Appending to file only new vectors"""
-                append_to_file(new_vector,fileW)
-                #print str(new_fitness[index]) + " value stored in new fitness\n"
-            else:
-                #print str(fitness[index]) + " is old vector fitness"
-                new_pop[index] = old_pop[index]
-                new_fitness[index] = fitness[index]
-
-        else:
-            new_fitness[index] = fitness[index]
-    return new_pop, new_fitness
 
 """creates the new vector from the three distinct vectors in the old population"""
 def get_new_pop_vec(numOfPop, numOfFea, old_pop, index_position):
@@ -110,7 +89,7 @@ def get_new_pop_vec(numOfPop, numOfFea, old_pop, index_position):
     vector_2 = old_pop[vi2]
     vector_3 = old_pop[vi3]
 
-    for x in range(0,numOfFea):
+    for x in range(0, numOfFea):
         new_vector[x] = vector_3[x] + F * (vector_2[x] - vector_1[x])
     return new_vector
 """get fitness of the new vector"""
