@@ -9,6 +9,10 @@ import sys
 import mlr
 import FromDataFileMLR
 import FromFinessFileMLR
+from hw3.Main import numOfFea
+
+from hw5.main import local_best_matrix
+
 """
 Create Initial Velocity
 Created randomly 50*385
@@ -63,8 +67,41 @@ def create_new_BPSO_population(numOfFea, alpha, population, velocity, localbest,
 
 def find_alpha(previous_alpha,total_num_iterations ):
     new_alpha=previous_alpha - (.17/total_num_iterations)
-
     return new_alpha
+
+def update_local_best_matrix(old_fitness, old_population, local_best_matrix,local_best_fitness , numOfFea,fileW):
+
+    for i in range (numOfFea):
+        if(old_fitness[i] < local_best_fitness[i]):
+            local_best_matrix[i] = old_population[i]
+        """update each new vector"""
+        append_to_file(local_best_matrix, fileW)
+    return local_best_matrix
+
+def update_global_best(old_global_best_row,global_best_row_fitness, local_best_matrix, local_best_fitness):
+
+    new_local_best_fitness_index = argmin(local_best_fitness)
+
+    if(global_best_row_fitness > local_best_fitness[new_local_best_fitness_index]):
+        old_global_best_row = local_best_matrix [new_local_best_fitness_index]
+        global_best_row_fitness = local_best_fitness[new_local_best_fitness_index]
+
+    return old_global_best_row, global_best_row_fitness
+
+
+"""    Update the velocity """
+def update_velocity(numOfPop,numOfFea,old_velocity,population,local_best_matrix, global_best_row):
+    c1=2
+    c2=2
+    inertiaWeight =0.9
+    new_velocity = zeros(shape(old_velocity))
+    for i in range (numOfPop):
+        for j in range (numOfFea):
+            term1 = c1 * random.random() * (local_best_matrix[i][j] - population[i][j])
+            term2 = c2 * random.random() * (global_best_row[j] - population[i][j])
+            new_velocity[i][j] = (inertiaWeight * old_velocity[i][j]) + term1 + term2
+
+    return new_velocity
 
 def Create_A_Population(numOfPop, numOfFea):
     population = random.random((numOfPop,numOfFea))

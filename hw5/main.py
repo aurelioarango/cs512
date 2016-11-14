@@ -72,7 +72,7 @@ import BPSO
 fileW = FromFinessFileMLR.createAnOutputFile()
 #fileW = 0
 model = mlr.MLR()
-
+start = time.time()
 #Number of descriptor should be 396 and number of population should be 50 or more
 """Number of population"""
 numOfPop = 50
@@ -96,7 +96,7 @@ fitness = FromFinessFileMLR.validate_model(model, fileW, population, \
                                                 TrainX, TrainY, ValidateX, ValidateY, TestX, TestY)
 """Initialize velocity"""
 initial_velocity=BPSO.create_initial_velocity(numOfPop,numOfFea)
-print initial_velocity
+
 #print str(shape(initial_velocity))
 
 """Initialize Local Best Matrix (Same as Initial Population)"""
@@ -104,8 +104,34 @@ local_best_matrix = population
 
 """Create Global best row"""
 global_best_row_index = argmin(fitness)
+global_best_row_fitness = fitness[global_best_row_index]
 global_best_row=population[global_best_row_index]
 #global_best_row=population[argmin(fitness)]
 
-""" call new population- based on old population, velocity, global and local best"""
-alpha, new_population = BPSO.create_new_BPSO_population(numOfFea, alpha, population, initial_velocity, local_best_matrix, global_best_row)
+generations_to_run = 2000
+
+print "Starting program"
+
+"""<Insert for loop>"""
+for i in range (0, 2000):
+
+    """ call new population- based on old population, velocity, global and local best"""
+    alpha, population = BPSO.create_new_BPSO_population(numOfFea, alpha, population, initial_velocity, local_best_matrix, global_best_row)
+
+    """"Calculate local best fitness of the new population"""
+    local_best_matrix_fitness = FromFinessFileMLR.validate_model(model, fileW, population, \
+                                                TrainX, TrainY, ValidateX, ValidateY, TestX, TestY)
+
+    """Update local best matrix"""
+    local_best_matrix = BPSO.update_local_best_matrix(fitness, population, local_best_matrix, local_best_matrix_fitness, numOfFea,fileW)
+    """update global best row"""
+
+    global_best_row, global_best_row_fitness = BPSO.update_global_best(global_best_row,global_best_row_fitness,local_best_matrix,local_best_matrix_fitness)
+
+    """update velocity """
+
+    initial_velocity = BPSO.update_velocity(numOfPop,numOfFea,initial_velocity,population,local_best_matrix,global_best_row)
+
+
+end = time.time()
+print str((end - start) / 60) + " minutes"
