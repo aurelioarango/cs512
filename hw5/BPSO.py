@@ -9,9 +9,7 @@ import sys
 import mlr
 import FromDataFileMLR
 import FromFinessFileMLR
-from hw3.Main import numOfFea
 
-from hw5.main import local_best_matrix
 
 """
 Create Initial Velocity
@@ -44,14 +42,16 @@ def getAValidrow(numOfFea, eps=0.015):
              V[j] = 0
        sum = V.sum()
     return V
+
 #------------------------------------------------------------------------------
 """create new population- based on old population, velocity, global and local best"""
-def create_new_BPSO_population(numOfFea, alpha, population, velocity, localbest, globalbest):
+def create_new_BPSO_population(numOfPop,numOfFea, alpha, population, velocity, localbest, globalbest):
 
     new_population = zeros(shape(population))
+
     p = 0.5 * (1 + alpha)
-    for i in range(numOfFea):
-        for j in range(numOfFea):
+    for i in range(0,numOfPop):
+        for j in range(0,numOfFea):
             if velocity[i][j] <= alpha:
                 new_population[i][j] = population[i][j]
             elif velocity[i][j] > alpha and velocity[i][j] <= p:
@@ -69,13 +69,13 @@ def find_alpha(previous_alpha,total_num_iterations ):
     new_alpha=previous_alpha - (.17/total_num_iterations)
     return new_alpha
 
-def update_local_best_matrix(old_fitness, old_population, local_best_matrix,local_best_fitness , numOfFea,fileW):
+def update_local_best_matrix(old_fitness, old_population, local_best_matrix,local_best_fitness , numOfPop,fileW):
 
-    for i in range (numOfFea):
+    for i in range (numOfPop):
         if(old_fitness[i] < local_best_fitness[i]):
             local_best_matrix[i] = old_population[i]
         """update each new vector"""
-        append_to_file(local_best_matrix, fileW)
+        append_to_file(local_best_matrix[i], fileW)
     return local_best_matrix
 
 def update_global_best(old_global_best_row,global_best_row_fitness, local_best_matrix, local_best_fitness):
