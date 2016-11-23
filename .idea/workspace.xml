@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb350838-af1e-415f-9411-f56023bcba6f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hw6/DE_BPSO.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hw6/DE_BPSO_model.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hw6/FromDataFileMLR.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hw6/FromFinessFileMLR.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hw6/Test-Data.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hw6/Test-pIC50.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hw6/Train-Data.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hw6/Train-pIC50.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hw6/Validation-Data.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hw6/Validation-pIC50.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hw6/main_DE_BPSO.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw5/main.py" afterPath="$PROJECT_DIR$/hw5/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw6/DE_BPSO.py" afterPath="$PROJECT_DIR$/hw6/DE_BPSO.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw6/FromFinessFileMLR.py" afterPath="$PROJECT_DIR$/hw6/FromFinessFileMLR.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw6/main_DE_BPSO.py" afterPath="$PROJECT_DIR$/hw6/main_DE_BPSO.py" />
     </list>
     <ignored path="cs512.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,42 +23,7 @@
     <favorites_list name="cs512" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw5/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="67" selection-end-column="11" />
-              <folding>
-                <element signature="e#1967#2012#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main_DE_BPSO.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw6/main_DE_BPSO.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="631">
-              <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-              <folding>
-                <element signature="e#1559#1604#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DE_BPSO_model.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hw6/DE_BPSO_model.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -97,8 +52,10 @@
         <option value="$PROJECT_DIR$/hw5/FromFinessFileMLR.py" />
         <option value="$PROJECT_DIR$/hw5/BPSO.py" />
         <option value="$PROJECT_DIR$/hw5/main.py" />
-        <option value="$PROJECT_DIR$/hw6/main_DE_BPSO.py" />
         <option value="$PROJECT_DIR$/hw6/DE_BPSO_model.py" />
+        <option value="$PROJECT_DIR$/hw6/DE_BPSO.py" />
+        <option value="$PROJECT_DIR$/hw6/FromFinessFileMLR.py" />
+        <option value="$PROJECT_DIR$/hw6/main_DE_BPSO.py" />
       </list>
     </option>
   </component>
@@ -176,6 +133,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="hw5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs512" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs512" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hw4" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -462,10 +433,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="33" y="35" width="1887" height="1045" extended-state="0" />
-    <editor active="true" />
+    <frame x="33" y="35" width="1887" height="1045" extended-state="1" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14193548" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14193548" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -521,23 +492,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hw5/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
-          <folding>
-            <element signature="e#1967#2012#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw4/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="71" column="4" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hw5/BPSO.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -838,13 +792,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw4/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="65" column="35" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hw5/FromFinessFileMLR.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6786">
@@ -854,6 +801,21 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hw5/2016-11-15-12-16-03.csv" />
+    <entry file="file://$PROJECT_DIR$/hw5/2016-11-15-12-19-45.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2087382">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw6/DE_BPSO_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hw5/BPSO.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1098">
@@ -862,38 +824,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/2016-11-15-12-19-45.csv">
+    <entry file="file://$PROJECT_DIR$/hw4/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2087382">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="433">
+          <caret line="68" column="13" selection-start-line="68" selection-start-column="7" selection-end-line="68" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/main.py">
+    <entry file="file://$PROJECT_DIR$/hw6/DE_BPSO.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="67" selection-end-column="11" />
+        <state relative-caret-position="-846">
+          <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
           <folding>
-            <element signature="e#1967#2012#0" expanded="true" />
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw6/FromFinessFileMLR.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="217" column="70" selection-start-line="217" selection-start-column="70" selection-end-line="217" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#61#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hw6/main_DE_BPSO.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="631">
-          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+        <state relative-caret-position="775">
+          <caret line="177" column="0" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
           <folding>
             <element signature="e#1559#1604#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw6/DE_BPSO_model.py">
+    <entry file="file://$PROJECT_DIR$/hw5/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
-          <folding />
+        <state relative-caret-position="739">
+          <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="136" selection-end-column="42" />
+          <folding>
+            <element signature="e#1967#2012#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

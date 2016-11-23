@@ -81,6 +81,8 @@ import DE_BPSO
 
 """Create the output file"""
 
+print "Starting program"
+
 fileW = FromFinessFileMLR.createAnOutputFile()
 #fileW = 0
 model = DE_BPSO_model.DE_BPSO_MODEL()
@@ -92,3 +94,85 @@ numOfPop = 50
 numOfFea = 396
 
 # Final model requirements
+
+R2req_train    = .6
+R2req_validate = .5
+R2req_test     = .5
+alpha = 0.5
+beta = 0.004
+
+TrainX, TrainY, ValidateX, ValidateY, TestX, TestY = FromDataFileMLR.getAllOfTheData()
+TrainX, ValidateX, TestX = FromDataFileMLR.rescaleTheData(TrainX, ValidateX, TestX)
+
+population = DE_BPSO.Create_A_Population(numOfPop, numOfFea)
+""" Get fitness"""
+fitness = FromFinessFileMLR.validate_model(model, fileW, population, \
+                                                TrainX, TrainY, ValidateX, ValidateY, TestX, TestY)
+"""Initialize velocity"""
+velocity = DE_BPSO.create_initial_velocity(numOfPop,numOfFea)
+
+"""Initialize Local Best Matrix (Same as Initial Population)"""
+local_best_matrix = population
+
+
+""""Calculate local best fitness of the local_best_matrix"""
+local_best_matrix_fitness = FromFinessFileMLR.validate_model(model, fileW, local_best_matrix, \
+                                                             TrainX, TrainY, ValidateX, ValidateY, TestX, TestY)
+
+"""Create Global best row"""
+global_best_row_index = argmin(fitness)
+global_best_row_fitness = fitness[global_best_row_index]
+global_best_row=population[global_best_row_index]
+
+
+
+generations_to_run = 2000
+fitness_change = global_best_row_fitness
+last_change =0
+
+"""<Insert for loop>"""
+for i in range (0, generations_to_run):
+
+    if fitness_change == 500:
+        print "Stopping program, best fitness has not change in 500 generations."
+        break
+
+    """update velocity with population"""
+    velocity = DE_BPSO.update_velocity(numOfPop, numOfFea, velocity,population)
+
+
+    """update-population / create-new-population , with velocity"""
+
+    population = DE_BPSO.update_population_DE_BPSO(numOfPop,numOfFea,velocity,alpha,generations_to_run, \
+                                                       population,local_best_matrix,global_best_row)
+    """calculate fitness of new population"""
+
+    new_fitness = FromFinessFileMLR.validate_model(model, fileW, population, \
+                                                    TrainX, TrainY, ValidateX, ValidateY, TestX, TestY)
+
+
+    """update local best _matrix"""
+    local_best_matrix = DE_BPSO.update_local_best_matrix(fitness,population,local_best_matrix, \
+                                                         local_best_matrix_fitness,numOfPop,fileW)
+
+
+    """"update local best matrix fitness """
+    local_best_matrix_fitness = FromFinessFileMLR.validate_model(model, fileW, local_best_matrix, \
+                                                                 TrainX, TrainY, ValidateX, ValidateY, TestX, TestY)
+
+    """ update global best row"""
+    global_best_row, global_best_row_fitness = DE_BPSO.update_global_best(global_best_row,global_best_row_fitness, \
+                                                                          local_best_matrix,local_best_matrix_fitness)
+
+    """increment if the fitness has not change, else update last_change and set fitness change"""
+    if fitness_change  == global_best_row_fitness:
+        last_change += 1;
+    else:
+        last_change = 0
+        """update the last time fitness change"""
+        fitness_change = global_best_row_fitness
+
+end = time.time()
+print str((end - start) / 60) + " minutes"
+
+

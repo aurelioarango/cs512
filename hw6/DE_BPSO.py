@@ -88,18 +88,69 @@ def update_global_best(old_global_best_row,global_best_row_fitness, local_best_m
 
     return old_global_best_row, global_best_row_fitness
 
+"""Create new population DE-BPSO"""
 
-"""    Update the velocity """
-def update_velocity(numOfPop,numOfFea,old_velocity,population,local_best_matrix, global_best_row):
-    c1=2
-    c2=2
-    inertiaWeight =0.9
+def update_population_DE_BPSO(numOfPop,numOfFea,velocity,alpha,total_num_iterations,population,local_best_matrix,global_best_row):
+    """ for i in range(0, 50):
+    for j in range(0, 396):
+        if alpha < velocity[i][j] and velocity[i][j] <= .5 * (1 + alpha):
+            population[i][j] = local_best_matrix[i][j]
+        elif 0.5 * (1 + alpha) < velocity[i][j] and velocity[i][j] <= (1 - beta):
+            population[i][j] = global_best_row[j]
+        elif 1 - beta < velocity[i][j] and velocity[i][j] <= 1
+            population[i][j] = 1 - population[i][j]
+        else
+            keep old population"""
+    beta =0.004
+    alpha = find_alpha(alpha,total_num_iterations )
+    for i in range(0, numOfPop):
+        for j in range(0, numOfFea):
+            if alpha < velocity[i][j] and velocity[i][j] <= .5 * (1 + alpha):
+                population[i][j] = local_best_matrix[i][j]
+            elif 0.5 * (1 + alpha) < velocity[i][j] and velocity[i][j] <= (1 - beta):
+                population[i][j] = global_best_row[j]
+            elif 1 - beta < velocity[i][j] and velocity[i][j] <= 1 :
+                population[i][j] = 1 - population[i][j]
+
+
+
+
+    return population
+
+"""    Update the velocity
+for i in range (0,50):
+  for j in range (0,396):
+    # get three random rows from pop r1, r2, r3
+    F = 0.7
+    CR = 0.7
+    # Let row = r3 + F * (r2 - r1)
+       #Cross mutation row i and r
+       if(random.random(0,1) < CR)
+        velocity[i][j] = r[j]
+       else
+        do nothing
+
+"""
+def update_velocity(numOfPop,numOfFea,old_velocity,population):
+    #c1=2
+    #c2=2
+    #inertiaWeight =0.9
+    CR = 0.7
     new_velocity = zeros(shape(old_velocity))
+
+
     for i in range (numOfPop):
+        #  get three random rows from pop r1, r2, r3
+        new_row = create_new_row_BPSO(numOfPop,population,i)
         for j in range (numOfFea):
-            term1 = c1 * random.random() * (local_best_matrix[i][j] - population[i][j])
-            term2 = c2 * random.random() * (global_best_row[j] - population[i][j])
-            new_velocity[i][j] = (inertiaWeight * old_velocity[i][j]) + term1 + term2
+            if random.uniform(0,1) < CR :
+                new_velocity[i][j] = new_row[j]
+
+            else:
+                new_velocity[i][j] = old_velocity[i][j]
+            #term1 = c1 * random.random() * (local_best_matrix[i][j] - population[i][j])
+            #term2 = c2 * random.random() * (global_best_row[j] - population[i][j])
+            #new_velocity[i][j] = (inertiaWeight * old_velocity[i][j]) + term1 + term2
 
     return new_velocity
 
@@ -112,6 +163,19 @@ def Create_A_Population(numOfPop, numOfFea):
             population[i][j] = V[j]
     return population
 
+def create_new_row_BPSO(numOfPop, old_pop, index_position):
+    F = 0.7
+    """get the row indexes, where all three are different from the current position"""
+    ri1, ri2, ri3 = create_three_random_v_indices(index_position, numOfPop)
+    # Let row = r3 + F * (r2 - r1)
+
+    row_1 = old_pop[ri1]
+    row_2 = old_pop[ri2]
+    row_3 = old_pop[ri3]
+
+    new_row = row_3 * F * (row_2 - row_1)
+
+    return new_row
 
 """creates the new vector from the three distinct vectors in the old population"""
 def get_new_pop_vec(numOfPop, numOfFea, old_pop, index_position):
