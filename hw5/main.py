@@ -116,14 +116,14 @@ print "Starting program"
 for i in range (0, 2000):
 
     """ call new population- based on old population, velocity, global and local best"""
-    alpha, population = BPSO.create_new_BPSO_population(numOfPop,numOfFea, alpha, population, initial_velocity, local_best_matrix, global_best_row)
+    alpha, population = BPSO.create_new_BPSO_population(numOfFea, alpha, population, initial_velocity, local_best_matrix, global_best_row)
 
     """"Calculate local best fitness of the new population"""
     local_best_matrix_fitness = FromFinessFileMLR.validate_model(model, fileW, population, \
                                                 TrainX, TrainY, ValidateX, ValidateY, TestX, TestY)
 
     """Update local best matrix"""
-    local_best_matrix = BPSO.update_local_best_matrix(fitness, population, local_best_matrix, local_best_matrix_fitness, numOfPop,fileW)
+    local_best_matrix = BPSO.update_local_best_matrix(fitness, population, local_best_matrix, local_best_matrix_fitness, numOfFea,fileW)
     """update global best row"""
 
     global_best_row, global_best_row_fitness = BPSO.update_global_best(global_best_row,global_best_row_fitness,local_best_matrix,local_best_matrix_fitness)
