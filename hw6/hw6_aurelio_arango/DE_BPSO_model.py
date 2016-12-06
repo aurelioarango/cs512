@@ -1,0 +1,38 @@
+"""Multiple Linear Regression"""
+
+
+import numpy as np      
+
+
+class DE_BPSO_MODEL:
+    """Multiple Linear Regression"""
+    
+    def __init__(self):
+        """Initialization"""
+        self.coef = None
+    
+    def fit(self, x_set, y_set):
+        """Fit to training X and Y arrays"""
+        # Add a column of 1's for the intercept
+        x_set = np.append(np.ones((x_set.shape[0], 1)), x_set, axis=1)
+        """ returns the least squares solution for the population R or Q, """
+        self.coef = np.linalg.lstsq(x_set, y_set)[0]
+        return 'DE-BPSO'
+    
+    def predict(self, x_set):
+        """Predict a Y from an X, object must already be fitted."""
+        # matrix multiplication of X appended with a column of 1's (for
+        # intercepts) and the coeficients
+        """Check if the len of the matrix is 1"""
+        if len(x_set.shape) == 1:
+            """Change the shape of the array without changing the data"""
+            """goes from a single array to a matrix"""
+            x_set = np.reshape(x_set, (1, x_set.shape[0]))
+            """Add the rest of the data"""
+        x_set = np.append(np.ones((x_set.shape[0], 1)), x_set, axis=1)
+        """Returns the matrix multiplication"""
+        return np.dot(x_set, self.coef)
+
+    def printing(self):
+        """Predict a Y from an X, object must already be fitted."""
+        print "How are you doing?"
